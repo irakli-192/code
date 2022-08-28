@@ -1,7 +1,10 @@
 import React,{createContext, useContext, useState} from 'react'
 
 export const navContext=createContext()
-let langDetectorRegex='^[ა-ჰ\s]*$';
+const langDetectorRegex=/^[ა-ჰ\s]*$/g;
+const langDetectorRegex2=/^[ა-ჰ\s]*$/g;
+const telRegex=/\+\s*9\s*9\s*5\s*5\s*[976514]\s*\d\s*\d\s*\d\s*\d\s*\d\s*\d\s*\d\s*/;
+const emailRegex=/^[^@]+@(redberry)\.ge$/i
 function NavContext(props) {
     const[name,setName]=useState('')
     const[lastName,setLastName]=useState('')
@@ -35,7 +38,9 @@ function NavContext(props) {
     }
     const goThirdPage=(e)=>{
       e.preventDefault();
-      if(name.trim().length>2){
+      if(
+      emailRegex.test(email)
+      ){
         setSecondPage(false)
         setThirdPage(true)
       }
