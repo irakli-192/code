@@ -5,7 +5,7 @@ import Group4 from '../../assets/Group4.png'
 import { validContext } from '../Context/validContext'
 
 function SecondPage() {
-  const{name,lastName,email,phone}=useContext(validContext)
+  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone}=useContext(validContext)
   return (
     <div>
       <img src={Group4} className='returnmark'/>
@@ -22,12 +22,12 @@ function SecondPage() {
             <div className='first_part'>
               <div className="inputs">
                 <label>სახელი</label>
-                <input type='text' placeholder='გრიშა' className='name' value={name}/>
+                <input type='text' placeholder='გრიშა' className='name' value={name} onChange={changeName}/>
                 <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
               </div>
               <div className="inputs">
                 <label>გვარი</label>
-                <input type='text' placeholder='ბაგრატიონი' className='name' value={lastName}/>
+                <input type='text' placeholder='ბაგრატიონი' className='name' value={lastName} onChange={changeLastName}/>
                 <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
               </div>
             </div>
@@ -40,12 +40,12 @@ function SecondPage() {
 
             <div className="second_part">
               <label>მეილი</label>
-              <input type='text' placeholder='grisha666@redberry.ge' className='inputs2' value={email}/>
+              <input type='text' placeholder='grisha666@redberry.ge' className='inputs2' value={email} onChange={changeEmail}/>
               <span>უნდა მთავრდებოდეს redberry.ge-ით</span>
             </div>
             <div className="second_part">
               <label>ტელეფონის ნომერი</label>
-              <input type='text' placeholder='+995 598 00 07 01' className='inputs2' value={phone}/>
+              <input type='text' placeholder='+995 598 00 07 01' className='inputs2' value={phone} onChange={changePhone}/>
               <span>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
             </div>
             <div className='button_div'>

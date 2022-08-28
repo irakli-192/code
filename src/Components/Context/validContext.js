@@ -7,7 +7,19 @@ function ValidContext(props) {
    const[lastName,setLastName]=useState('')
    const[email,setEmail]=useState('')
    const[phone,setPhone]=useState('')
-   const value={name,lastName,email,phone}
+   const changeName=(e)=>{
+    setName(e.target.value)
+   }
+   const changeLastName=(e)=>{
+    setLastName(e.target.value)
+   }
+   const changeEmail=(e)=>{
+    setEmail(e.target.value)
+   }
+   const changePhone=(e)=>{
+    setPhone(e.target.value)
+   }
+   const value={name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone}
   return (
     <div>
       <validContext.Provider value={value}>
