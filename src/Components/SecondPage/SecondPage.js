@@ -2,13 +2,14 @@ import React, { useContext } from 'react'
 import './SecondPage.css'
 import logo2 from '../../assets/logo2.png'
 import Group4 from '../../assets/Group4.png'
-import { validContext } from '../Context/validContext'
+import { navContext } from '../Context/navContext'
 
 function SecondPage() {
-  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone}=useContext(validContext)
+  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,goThirdPage,returnPreviousPage}=useContext(navContext)
+
   return (
     <div>
-      <img src={Group4} className='returnmark'/>
+      <img src={Group4} onClick={returnPreviousPage} className='returnmark'/>
       <div className='main_box'>
         <div className='headers'>
           <div>
@@ -18,7 +19,7 @@ function SecondPage() {
           <h2>ლეპტოპის მახასიათებლები</h2>
         </div>
         <div className='box'>
-          <form className='form'>
+          <form className='form' onSubmit={goThirdPage}>
             <div className='first_part'>
               <div className="inputs">
                 <label>სახელი</label>
