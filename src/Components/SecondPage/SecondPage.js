@@ -16,36 +16,39 @@ function SecondPage() {
           <h2>ლეპტოპის მახასიათებლები</h2>
         </div>
         <div className='box'>
-          <form>
+          <form className='form'>
             <div className='first_part'>
-              <div>
+              <div className="inputs">
                 <label>სახელი</label>
-                <input type='text' placeholder='გრიშა'/>
+                <input type='text' placeholder='გრიშა' className='name'/>
                 <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
               </div>
-              <div>
+              <div className="inputs">
                 <label>გვარი</label>
-                <input type='text' placeholder='ბაგრატიონი'/>
+                <input type='text' placeholder='ბაგრატიონი' className='name'/>
                 <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
               </div>
             </div>
-            <select>
+            <select className='select1'>
               <option>თიმი</option>
             </select>
-            <select>
+            <select className='select1'>
               <option>პოზიცია</option>
             </select>
-            <div>
+
+            <div className="second_part">
               <label>მეილი</label>
-              <input type='text' placeholder='grisha666@redberry.ge'/>
+              <input type='text' placeholder='grisha666@redberry.ge' className='inputs2'/>
               <span>უნდა მთავრდებოდეს redberry.ge-ით</span>
             </div>
-            <div>
+            <div className="second_part">
               <label>ტელეფონის ნომერი</label>
-              <input type='text' placeholder='+995 598 00 07 01'/>
+              <input type='text' placeholder='+995 598 00 07 01' className='inputs2'/>
               <span>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
             </div>
-            <button>შემდეგი</button>
+            <div className='button_div'>
+              <button className='button'>შემდეგი</button>
+            </div>
           </form>
         </div>
         <img src={logo2} alt='Redberry Logo' className='RedLogo'/>

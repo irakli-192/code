@@ -1,4 +1,7 @@
 
+*{
+    box-sizing: border-box;
+}
 .first_button{
     margin-bottom:26px;
     width: 387px;
