@@ -18,6 +18,11 @@ function ThirdPage() {
           <h2>ლეპტოპის მახასიათებლები</h2>
         </div>
         <div className='box'>
+          <div className='drop_zone'>
+              <div className='drop_zone_text'>ჩააგდე ან ატვირთე</div>
+              <div className='drop_zone_text2'>ლეპტოპის ფოტო</div>
+              <button className='image_button'>ატვირთე</button>
+          </div>
         </div>
            <img src={logo2} alt='Redberry Logo' className='RedLogo'/>
            </div>

@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 .parent{
     width: 100%;
 }
@@ -50,4 +53,43 @@
 .RedLogo{
     margin-top: 20px;
     margin-bottom: 25px;
+}
+.drop_zone{
+    width: 878px;
+    height: 423px;
+    border-radius: 18px;
+    background-color: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:2px dashed #4386A9;
+    padding-top: 110px;
+}
+.drop_zone_text{
+    color: #4386A9;
+    width: 205px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 38px;
+}
+
+.drop_zone_text2{
+    color: #4386A9;
+    width: 183px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 38px;
+}
+.image_button{
+    background: #62A1EB;
+    border-radius: 8px;
+    width: 233px;
+    height: 60px;
+    border:none;
+    color:white;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 72px;
+
 }
