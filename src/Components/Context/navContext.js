@@ -8,6 +8,8 @@ const emailRegex=/^[^@]+@(redberry)\.ge$/;
 function NavContext(props) {
     const[name,setName]=useState('')
     const[namesErrors,setNamesErrors]=useState(false)
+    const[lastNameErrors,setLastNameErrors]=useState(false)
+    const[lanErrors,setLanErrors]=useState(false)
     const[selectError,setSelectError]=useState(false)
     const[emailError,setEmailError]=useState(false)
     const[phoneError,setPhoneError]=useState(false)
@@ -50,7 +52,7 @@ function NavContext(props) {
     }
     const goThirdPage=(e)=>{
       e.preventDefault();
-      if(name.trim().length>2&&langDetectorRegex.test(name)&&
+      if(name.trim().length>=2&&langDetectorRegex.test(name)&&
       lastName.trim().length>2&&langDetectorRegex.test(lastName)&&
       telRegex.test(phone)&&phone.trim().length===13&&
       emailRegex.test(email)&&chosenTeam!='თიმი'&&chosenPosition!='პოზიცია'
@@ -58,10 +60,20 @@ function NavContext(props) {
         setSecondPage(false)
         setThirdPage(true)
       }
-      if(name.trim().length<=2){
+      if(name.trim().length<2){
         setNamesErrors(true)
       }else{
         setNamesErrors(false)
+      }
+      if(lastName.trim().length<2||!langDetectorRegex.test(lastName)){
+        setLastNameErrors(true)
+      }else{
+        setLastNameErrors(false)
+      }
+      if(!langDetectorRegex.test(name)){
+        setLanErrors(true)
+      }else{
+        setLanErrors(false)
       }
       if(chosenTeam=='თიმი'){
         setSelectError(true)
@@ -85,7 +97,7 @@ function NavContext(props) {
       }
     }
     const value={goNextPage,namesErrors,returnPreviousPage,goThirdPage,secondPage,firstPage,thirdPage,name,lastName,email,phone,
-    changeLastName,changeName,changeEmail,changePhone,changeTeam,changePosition,phoneError,emailError,selectError2,
+    changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,changePosition,phoneError,emailError,selectError2,
     chosenTeam,chosenPosition,selectError}
   return (
     <div>

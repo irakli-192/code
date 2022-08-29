@@ -7,7 +7,7 @@ import { fetchContext } from '../Context/fetchContext'
 
 function SecondPage() {
   const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,goThirdPage,phoneError,emailError,
-    returnPreviousPage,changeTeam,chosenTeam,namesErrors,changePosition,chosenPosition,selectError2}=useContext(navContext)
+    returnPreviousPage,changeTeam,chosenTeam,namesErrors,lanErrors,changePosition,lastNameErrors,chosenPosition,selectError2}=useContext(navContext)
   const{team,position}=useContext(fetchContext)
   return (
     <div>
@@ -23,7 +23,7 @@ function SecondPage() {
         <div className='box'>
           <form className='form' onSubmit={goThirdPage}>
             <div className='first_part'>
-              <div className={`inputs ${namesErrors ? 'lengthError':''}`}>
+              <div className={`inputs ${namesErrors || lanErrors ? 'lengthError':''} `}>
                 <label>სახელი</label>
                 <input type='text' placeholder='გრიშა' className='name' value={name} onChange={changeName}/>
                 <div className='spans'>
@@ -31,7 +31,7 @@ function SecondPage() {
                   <span className='span2'>ქართული ასოები</span>
                 </div>
               </div>
-              <div className="inputs">
+              <div className={`inputs ${lastNameErrors ? 'lengthError':''} `}>
                 <label>გვარი</label>
                 <input type='text' placeholder='ბაგრატიონი' className='name' value={lastName} onChange={changeLastName}/>
                 <div className='spans'>
