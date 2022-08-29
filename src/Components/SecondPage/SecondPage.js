@@ -5,12 +5,13 @@ import Group4 from '../../assets/Group4.png'
 import { navContext } from '../Context/navContext'
 import { fetchContext } from '../Context/fetchContext'
 
+
 function SecondPage() {
   const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,goThirdPage,phoneError,emailError,
     returnPreviousPage,changeTeam,chosenTeam,namesErrors,lanErrors,changePosition,lastNameErrors,chosenPosition,selectError2}=useContext(navContext)
   const{team,position}=useContext(fetchContext)
   return (
-    <div>
+    <div className='parent'>
       <img src={Group4} onClick={returnPreviousPage} className='returnmark'/>
       <div className='main_box'>
         <div className='headers'>
@@ -21,6 +22,7 @@ function SecondPage() {
           <h2>ლეპტოპის მახასიათებლები</h2>
         </div>
         <div className='box'>
+
           <form className='form' onSubmit={goThirdPage}>
             <div className='first_part'>
               <div className={`inputs ${namesErrors || lanErrors ? 'lengthError':''} `}>
@@ -74,9 +76,10 @@ function SecondPage() {
               <button className='button' type='submit'>შემდეგი</button>
             </div>
           </form>
-        </div>
-        <img src={logo2} alt='Redberry Logo' className='RedLogo'/>
-      </div>
+        
+           </div>
+           <img src={logo2} alt='Redberry Logo' className='RedLogo'/>
+           </div>
     </div>
   )
 }

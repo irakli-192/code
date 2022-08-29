@@ -1,0 +1,53 @@
+.parent{
+    width: 100%;
+}
+.returnmark{
+    position: relative;
+    z-index: 2;
+    padding-top: 43px;
+    padding-left: 73px;
+
+}
+.box{
+    width: 1226px;
+    height: 973px;
+    background-color: white;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+
+
+}
+.headers{
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #232323;
+
+}
+.main_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.personal_info{
+    margin-right: 66px;
+}
+.black_line{
+    width: 185px;
+    height: 0px;
+    border: 1px solid #000000;
+    top:0;
+    margin-top: 10px;
+    margin-left:5px;
+}
+.RedLogo{
+    margin-top: 20px;
+    margin-bottom: 25px;
+}

@@ -1,7 +1,9 @@
-
 *{
     box-sizing: border-box;
     
+}
+.parent{
+    width: 100%;
 }
 .main_box{
     width: 100%;
