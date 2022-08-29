@@ -6,7 +6,8 @@ import { navContext } from '../Context/navContext'
 import { fetchContext } from '../Context/fetchContext'
 
 function SecondPage() {
-  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,goThirdPage,returnPreviousPage,changeTeam,chosenTeam,changePosition,chosenPosition}=useContext(navContext)
+  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,goThirdPage,
+    returnPreviousPage,changeTeam,chosenTeam,changePosition,chosenPosition,selectError2}=useContext(navContext)
   const{team,position}=useContext(fetchContext)
   return (
     <div>
@@ -33,13 +34,13 @@ function SecondPage() {
                 <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
               </div>
             </div>
-            <select className='select1' value={chosenTeam} onChange={changeTeam}>
+            <select className={`select1 ${selectError ? 'selectError':''}`} value={chosenTeam} onChange={changeTeam}>
               <option>თიმი</option>
               {team.map(item=>{
                 return <option key={item.id}>{item.name}</option>
               })}
             </select>
-            <select className='select1' value={chosenPosition} onChange={changePosition}>
+            <select className={`select1 ${selectError2 ? 'selectError':''}`} value={chosenPosition} onChange={changePosition}>
               <option>პოზიცია</option>
               {team.map(items=>{
                 if(items.name==chosenTeam){
@@ -49,13 +50,10 @@ function SecondPage() {
                             return <option key={pos.id}>{pos.name}</option>
                           }
                         })
-                          
                       )
-                  
                 }
               })}
             </select>
-
             <div className="second_part">
               <label>მეილი</label>
               <input type='text' placeholder='grisha666@redberry.ge' className='inputs2' value={email} onChange={changeEmail}/>

@@ -1,12 +1,15 @@
 import React,{createContext, useContext, useState} from 'react'
 
 export const navContext=createContext()
-const langDetectorRegex=/^[ა-ჰ\s]*$/g;
-const langDetectorRegex2=/^[ა-ჰ\s]*$/g;
-const telRegex=/\+\s*9\s*9\s*5\s*5\s*[976514]\s*\d\s*\d\s*\d\s*\d\s*\d\s*\d\s*\d\s*/;
-const emailRegex=/^[^@]+@(redberry)\.ge$/i
+const langDetectorRegex=/^[ა-ჰ\s]*$/;
+
+const telRegex=/\+*9*9*5*5*[976514]*\d*\d*\d*\d*\d*\d*\d*/;
+const emailRegex=/^[^@]+@(redberry)\.ge$/;
 function NavContext(props) {
     const[name,setName]=useState('')
+    const[namesErrors,setNamesErrors]=useState(false)
+    const[selectError,setSelectError]=useState(false)
+    const[selectError2,setSelectError2]=useState(false)
     const[lastName,setLastName]=useState('')
     const[email,setEmail]=useState('')
     const[phone,setPhone]=useState('')
@@ -46,16 +49,26 @@ function NavContext(props) {
     const goThirdPage=(e)=>{
       e.preventDefault();
       if(name.trim().length>2&&langDetectorRegex.test(name)&&
-      lastName.trim().length>2&&langDetectorRegex2.test(lastName)&&
-      telRegex.test(phone)&&
+      lastName.trim().length>2&&langDetectorRegex.test(lastName)&&
+      telRegex.test(phone)&&phone.trim().length===13&&
       emailRegex.test(email)&&chosenTeam!='თიმი'&&chosenPosition!='პოზიცია'
       ){
         setSecondPage(false)
         setThirdPage(true)
       }
+      if(chosenTeam=='თიმი'){
+        setSelectError(true)
+      }else{
+        setSelectError(false)
+      }
+      if(chosenTeam!=='თიმი'&&chosenPosition=='პოზიცია'){
+        setSelectError2(true)
+      }else{
+        setSelectError2(false)
+      }
     }
-    const value={goNextPage,returnPreviousPage,goThirdPage,secondPage,firstPage,thirdPage,name,lastName,email,phone,
-    changeLastName,changeName,changeEmail,changePhone,changeTeam,changePosition,chosenTeam,chosenPosition}
+    const value={goNextPage,namesErrors,returnPreviousPage,goThirdPage,secondPage,firstPage,thirdPage,name,lastName,email,phone,
+    changeLastName,changeName,changeEmail,changePhone,changeTeam,changePosition,selectError2,chosenTeam,chosenPosition,selectError}
   return (
     <div>
       <navContext.Provider value={value}>
