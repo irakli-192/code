@@ -6,8 +6,8 @@ import { navContext } from '../Context/navContext'
 import { fetchContext } from '../Context/fetchContext'
 
 function SecondPage() {
-  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,goThirdPage,
-    returnPreviousPage,changeTeam,chosenTeam,changePosition,chosenPosition,selectError2}=useContext(navContext)
+  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,goThirdPage,phoneError,emailError,
+    returnPreviousPage,changeTeam,chosenTeam,namesErrors,changePosition,chosenPosition,selectError2}=useContext(navContext)
   const{team,position}=useContext(fetchContext)
   return (
     <div>
@@ -23,15 +23,21 @@ function SecondPage() {
         <div className='box'>
           <form className='form' onSubmit={goThirdPage}>
             <div className='first_part'>
-              <div className="inputs">
+              <div className={`inputs ${namesErrors ? 'lengthError':''}`}>
                 <label>სახელი</label>
                 <input type='text' placeholder='გრიშა' className='name' value={name} onChange={changeName}/>
-                <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                <div className='spans'>
+                  <span className='span1'>მინიმუმ 2 სიმბოლო,</span>
+                  <span className='span2'>ქართული ასოები</span>
+                </div>
               </div>
               <div className="inputs">
                 <label>გვარი</label>
                 <input type='text' placeholder='ბაგრატიონი' className='name' value={lastName} onChange={changeLastName}/>
-                <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                <div className='spans'>
+                  <span className='span1'>მინიმუმ 2 სიმბოლო,</span>
+                  <span className='span2'>ქართული ასოები</span>
+                </div>
               </div>
             </div>
             <select className={`select1 ${selectError ? 'selectError':''}`} value={chosenTeam} onChange={changeTeam}>
@@ -54,14 +60,14 @@ function SecondPage() {
                 }
               })}
             </select>
-            <div className="second_part">
+            <div className={`second_part ${emailError ? 'selectError':''}`}>
               <label>მეილი</label>
               <input type='text' placeholder='grisha666@redberry.ge' className='inputs2' value={email} onChange={changeEmail}/>
               <span>უნდა მთავრდებოდეს redberry.ge-ით</span>
             </div>
-            <div className="second_part">
+            <div className={`second_part ${phoneError ? 'selectError':''}`}>
               <label>ტელეფონის ნომერი</label>
-              <input type='text' placeholder='+995 598 00 07 01' className='inputs2' value={phone} onChange={changePhone}/>
+              <input type='text' placeholder='+995 598 00 07 01' className='inputs2'  value={phone} onChange={changePhone}/>
               <span>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
             </div>
             <div className='button_div'>

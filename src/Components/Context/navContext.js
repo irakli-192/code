@@ -3,12 +3,14 @@ import React,{createContext, useContext, useState} from 'react'
 export const navContext=createContext()
 const langDetectorRegex=/^[ა-ჰ\s]*$/;
 
-const telRegex=/\+*9*9*5*5*[976514]*\d*\d*\d*\d*\d*\d*\d*/;
+const telRegex=/\+\S*9\S*9\S*5\S*5\S*[976514]\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*/;
 const emailRegex=/^[^@]+@(redberry)\.ge$/;
 function NavContext(props) {
     const[name,setName]=useState('')
     const[namesErrors,setNamesErrors]=useState(false)
     const[selectError,setSelectError]=useState(false)
+    const[emailError,setEmailError]=useState(false)
+    const[phoneError,setPhoneError]=useState(false)
     const[selectError2,setSelectError2]=useState(false)
     const[lastName,setLastName]=useState('')
     const[email,setEmail]=useState('')
@@ -56,6 +58,11 @@ function NavContext(props) {
         setSecondPage(false)
         setThirdPage(true)
       }
+      if(name.trim().length<=2){
+        setNamesErrors(true)
+      }else{
+        setNamesErrors(false)
+      }
       if(chosenTeam=='თიმი'){
         setSelectError(true)
       }else{
@@ -66,9 +73,20 @@ function NavContext(props) {
       }else{
         setSelectError2(false)
       }
+      if(!emailRegex.test(email)){
+        setEmailError(true)
+      }else{
+        setEmailError(false)
+      }
+      if(phone.trim().length!==13||!telRegex.test(phone)){
+        setPhoneError(true)
+      }else{
+        setPhoneError(false)
+      }
     }
     const value={goNextPage,namesErrors,returnPreviousPage,goThirdPage,secondPage,firstPage,thirdPage,name,lastName,email,phone,
-    changeLastName,changeName,changeEmail,changePhone,changeTeam,changePosition,selectError2,chosenTeam,chosenPosition,selectError}
+    changeLastName,changeName,changeEmail,changePhone,changeTeam,changePosition,phoneError,emailError,selectError2,
+    chosenTeam,chosenPosition,selectError}
   return (
     <div>
       <navContext.Provider value={value}>

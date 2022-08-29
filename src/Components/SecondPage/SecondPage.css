@@ -143,5 +143,29 @@ input{
     padding-left: 10px;
 }
 .select1.selectError{
-    border: solid red;
+    border: solid #E52F2F;
+}
+.second_part.selectError label{
+    color: #E52F2F;
+}
+.second_part.selectError span{
+    color: #E52F2F;
+}
+.second_part.selectError input{
+    border: solid #E52F2F;
+}
+.spans{
+    display: flex;
+}
+.span1{
+    margin-right: 4px;
+}
+.inputs.lengthError label{
+    color: #E52F2F;
+}
+.inputs.lengthError input{
+    border: solid #E52F2F;
+}
+.inputs.lengthError div span{
+    color: #E52F2F;
 }
