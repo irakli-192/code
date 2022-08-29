@@ -6,8 +6,8 @@ import { navContext } from '../Context/navContext'
 import { fetchContext } from '../Context/fetchContext'
 
 function SecondPage() {
-  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,goThirdPage,returnPreviousPage}=useContext(navContext)
-  const{team}=useContext(fetchContext)
+  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,goThirdPage,returnPreviousPage,changeTeam,chosenTeam,changePosition,chosenPosition}=useContext(navContext)
+  const{team,position}=useContext(fetchContext)
   return (
     <div>
       <img src={Group4} onClick={returnPreviousPage} className='returnmark'/>
@@ -33,14 +33,27 @@ function SecondPage() {
                 <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
               </div>
             </div>
-            <select className='select1'>
+            <select className='select1' value={chosenTeam} onChange={changeTeam}>
               <option>თიმი</option>
               {team.map(item=>{
                 return <option key={item.id}>{item.name}</option>
               })}
             </select>
-            <select className='select1'>
+            <select className='select1' value={chosenPosition} onChange={changePosition}>
               <option>პოზიცია</option>
+              {team.map(items=>{
+                if(items.name==chosenTeam){
+                      return(
+                        position.map(pos=>{
+                          if(items.id===pos.team_id){
+                            return <option key={pos.id}>{pos.name}</option>
+                          }
+                        })
+                          
+                      )
+                  
+                }
+              })}
             </select>
 
             <div className="second_part">
