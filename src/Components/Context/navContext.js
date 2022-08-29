@@ -38,7 +38,9 @@ function NavContext(props) {
     }
     const goThirdPage=(e)=>{
       e.preventDefault();
-      if(
+      if(name.trim().length>2&&langDetectorRegex.test(name)&&
+      lastName.trim().length>2&&langDetectorRegex2.test(lastName)&&
+      telRegex.test(phone)&&
       emailRegex.test(email)
       ){
         setSecondPage(false)

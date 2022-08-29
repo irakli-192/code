@@ -3,10 +3,11 @@ import './SecondPage.css'
 import logo2 from '../../assets/logo2.png'
 import Group4 from '../../assets/Group4.png'
 import { navContext } from '../Context/navContext'
+import { fetchContext } from '../Context/fetchContext'
 
 function SecondPage() {
   const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,goThirdPage,returnPreviousPage}=useContext(navContext)
-
+  const{team}=useContext(fetchContext)
   return (
     <div>
       <img src={Group4} onClick={returnPreviousPage} className='returnmark'/>
@@ -34,6 +35,9 @@ function SecondPage() {
             </div>
             <select className='select1'>
               <option>თიმი</option>
+              {team.map(item=>{
+                return <option key={item.id}>{item.name}</option>
+              })}
             </select>
             <select className='select1'>
               <option>პოზიცია</option>
