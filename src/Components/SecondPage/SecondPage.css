@@ -1,6 +1,11 @@
 *{
     box-sizing: border-box;
+    font-family: HelveticaNeue;
     
+}
+@font-face{
+    font-family: HelveticaNeue;
+    src:url(../../fonts/HelveticaNeue.ttc)
 }
 .parent{
     width: 100%;
@@ -15,7 +20,6 @@
 }
 .box{
     width: 1226px;
-    height: 973px;
     background-color: white;
     border-radius: 18px;
     margin-bottom: 15px;
@@ -26,13 +30,14 @@
 
 }
 .headers{
+    width: 600px;
     display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
     margin-top: 20px;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
-    line-height: 24px;
     color: #232323;
 
 }
@@ -48,17 +53,14 @@
     padding-left: 73px;
 
 }
-.personal_info{
-    margin-right: 66px;
-}
-.black_line{
+.line{
     width: 185px;
     height: 0px;
-    border: 1px solid #000000;
-    top:0;
-    margin-top: 10px;
-    margin-left:5px;
+    border: 1px solid #2e2e2e;
+    margin-left: 13px;
+    margin-top:15px;
 }
+
 .RedLogo{
     margin-top: 20px;
     margin-bottom: 25px;
@@ -95,7 +97,7 @@
     background: #EBEBEB;
     border-radius: 8px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     line-height: 21px;
     letter-spacing: 0.04em;
@@ -132,17 +134,23 @@
 }
 label{
     margin-bottom: 10px;
-    font-weight: 500;
+    font-weight:600;
     font-size: 18px;
     line-height: 21px;
+    font-family: HelveticaNeue;
+    color: #000000;
+
 }
 .span{
     font-weight: 300;
     font-size: 14px;
     line-height: 21px;
+    
 }
 input{
     padding-left: 10px;
+    outline: none;
+
 }
 .select1.selectError{
     border: solid #E52F2F;
@@ -170,4 +178,25 @@ input{
 }
 .inputs.lengthError div span{
     color: #E52F2F;
+}
+select{
+    outline: none;
+    
+}
+span{
+    font-family: HelveticaNeue;
+    font-weight: 300;
+    color: #2E2E2E;
+}
+h2{
+    font-family: HelveticaNeue;
+    font-weight: 700;
+}
+
+.leptop_info{
+    font-family: HelveticaNeue;
+    font-weight: 700;
+}
+.employe{
+    display: flex;
 }

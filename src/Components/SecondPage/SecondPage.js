@@ -15,11 +15,11 @@ function SecondPage() {
       <img src={Group4} onClick={returnPreviousPage} className='returnmark'/>
       <div className='main_box'>
         <div className='headers'>
-          <div>
+          <div className='employe'>
             <h2 className='personal_info'>თანამშრომლის ინფო</h2>
-            <div className='black_line'></div>
+            <h2 className='h2'>ლეპტოპის მახასიათებლები</h2>
           </div>
-          <h2>ლეპტოპის მახასიათებლები</h2>
+            <div className='line'></div>
         </div>
         <div className='box'>
 
@@ -78,7 +78,7 @@ function SecondPage() {
           </form>
         
            </div>
-           <img src={logo2} alt='Redberry Logo' className='RedLogo'/>
+              <img src={logo2} alt='Redberry Logo' className='RedLogo'/>
            </div>
     </div>
   )

@@ -52,14 +52,14 @@ function NavContext(props) {
     }
     const goThirdPage=(e)=>{
       e.preventDefault();
-      if(name.trim().length>=2&&langDetectorRegex.test(name)&&
-      lastName.trim().length>2&&langDetectorRegex.test(lastName)&&
-      telRegex.test(phone)&&phone.trim().length===13&&
-      emailRegex.test(email)&&chosenTeam!='თიმი'&&chosenPosition!='პოზიცია'
-      ){
+      // if(name.trim().length>=2&&langDetectorRegex.test(name)&&
+      // lastName.trim().length>2&&langDetectorRegex.test(lastName)&&
+      // telRegex.test(phone)&&phone.trim().length===13&&
+      // emailRegex.test(email)&&chosenTeam!='თიმი'&&chosenPosition!='პოზიცია'
+      // ){
         setSecondPage(false)
         setThirdPage(true)
-      }
+      // }
       if(name.trim().length<2){
         setNamesErrors(true)
       }else{
