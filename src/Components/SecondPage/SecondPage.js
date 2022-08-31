@@ -7,12 +7,12 @@ import { fetchContext } from '../Context/fetchContext'
 
 
 function SecondPage() {
-  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,goThirdPage,phoneError,emailError,
-    returnPreviousPage,changeTeam,chosenTeam,namesErrors,lanErrors,changePosition,lastNameErrors,chosenPosition,selectError2}=useContext(navContext)
+  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,backFunction,phoneError,emailError,
+    changeTeam,chosenTeam,namesErrors,lanErrors,changePosition,lastNameErrors,chosenPosition,selectError2,goFunction}=useContext(navContext)
   const{team,position}=useContext(fetchContext)
   return (
     <div className='parent'>
-      <img src={Group4} onClick={returnPreviousPage} className='returnmark'/>
+      <img src={Group4} onClick={backFunction} className='returnmark'/>
       <div className='main_box'>
         <div className='headers'>
           <div className='employe'>
@@ -23,7 +23,7 @@ function SecondPage() {
         </div>
         <div className='box'>
 
-          <form className='form' onSubmit={goThirdPage}>
+          <form className='form' onSubmit={goFunction}>
             <div className='first_part'>
               <div className={`inputs ${namesErrors || lanErrors ? 'lengthError':''} `}>
                 <label>სახელი</label>

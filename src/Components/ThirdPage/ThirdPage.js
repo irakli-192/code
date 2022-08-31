@@ -3,17 +3,19 @@ import './ThirdPage.css'
 import logo2 from '../../assets/logo2.png'
 import Group4 from '../../assets/Group4.png'
 import { navContext } from '../Context/navContext'
+import { thirdPageContext } from '../Context/ThirdPageContext.js'
 
 function ThirdPage() {
   const[file,setFile]=useState(null)
-  const{returnPreviousPage,returnSecondPage}=useContext(navContext)
+  const{laptop,CPU}=useContext(thirdPageContext)
+  const{backFunction}=useContext(navContext)
   const uploadPhoto=(e)=>{
     setFile(e.target.files[0])
     
   }
   return (
     <div className='parent'>
-      <img src={Group4} onClick={returnSecondPage} className='returnmark'/>
+      <img src={Group4} onClick={backFunction} className='returnmark'/>
       <div className='main_box'>
       <div className='headers'>
           <div className='employe'>
@@ -37,6 +39,9 @@ function ThirdPage() {
                 <input type='text' placeholder='HP' className='leptop_name_input'/>
                 <select className='brand_select'>
                   <option>ლეპტოპის ბრენდი</option>
+                  {laptop.map(item=>{
+                    return <option key={item.id}>{item.name}</option>
+                  })}
                 </select>
               </div>
               <span className='third_span'>ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
@@ -46,6 +51,9 @@ function ThirdPage() {
               <div className='middle_top'>
                 <select className='middle_top_select'>
                   <option>CPU</option>
+                  {CPU.map(item=>{
+                    return <option key={item.id}>{item.name}</option>
+                  })}
                 </select>
                 <div className='middle_inputs_CPU'>
                   <label>CPU-ს ბირთვი</label>
@@ -113,7 +121,7 @@ function ThirdPage() {
                   </div>
             </div>
             <div className='nav_buttons'>
-              <button className='back' onClick={returnSecondPage}>უკან</button>
+              <button className='back' onClick={backFunction}>უკან</button>
               <button className='save'>დამახსოვრება</button>
             </div>
           </form>

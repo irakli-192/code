@@ -7,6 +7,7 @@ const telRegex=/\+\S*9\S*9\S*5\S*5\S*[976514]\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d
 const emailRegex=/^[^@]+@(redberry)\.ge$/;
 function NavContext(props) {
     const[name,setName]=useState('')
+    const[page,setPage]=useState(1)
     const[namesErrors,setNamesErrors]=useState(false)
     const[lastNameErrors,setLastNameErrors]=useState(false)
     const[lanErrors,setLanErrors]=useState(false)
@@ -37,74 +38,63 @@ function NavContext(props) {
     const changePosition=(e)=>{
       setChosenPosition(e.target.value)
     }
-    const[secondPage,setSecondPage]=useState(false)
-    const[firstPage,setFirstPage]=useState(true)
-    const[thirdPage,setThirdPage]=useState(false)
-    const goNextPage=(e)=>{
-        e.preventDefault();
-        setFirstPage(false)
-        setSecondPage(true)
-    }
-    const returnPreviousPage=(e)=>{
-        e.preventDefault();
-        setSecondPage(false)
-        setFirstPage(true)
-    }
-    const returnSecondPage=(e)=>{
+  
+    const goFunction=(e)=>{
       e.preventDefault();
-      setThirdPage(false)
-      setSecondPage(true)
+      // if(page===2){
+      //   if(name.trim().length<2){
+      //     setNamesErrors(true)
+      //   }else{
+      //     setNamesErrors(false)
+      //   }
+      //   if(lastName.trim().length<2||!langDetectorRegex.test(lastName)){
+      //     setLastNameErrors(true)
+      //   }else{
+      //     setLastNameErrors(false)
+      //   }
+      //   if(!langDetectorRegex.test(name)){
+      //     setLanErrors(true)
+      //   }else{
+      //     setLanErrors(false)
+      //   }
+      //   if(chosenTeam=='თიმი'){
+      //     setSelectError(true)
+      //   }else{
+      //     setSelectError(false)
+      //   }
+      //   if(chosenTeam!=='თიმი'&&chosenPosition=='პოზიცია'){
+      //     setSelectError2(true)
+      //   }else{
+      //     setSelectError2(false)
+      //   }
+      //   if(!emailRegex.test(email)){
+      //     setEmailError(true)
+      //   }else{
+      //     setEmailError(false)
+      //   }
+      //   if(phone.trim().length!==13||!telRegex.test(phone)){
+      //     setPhoneError(true)
+      //   }else{
+      //     setPhoneError(false)
+      //   }
+      //     if(name.trim().length>=2&&langDetectorRegex.test(name)&&
+      //   lastName.trim().length>2&&langDetectorRegex.test(lastName)&&
+      //   telRegex.test(phone)&&phone.trim().length===13&&
+      //   emailRegex.test(email)&&chosenTeam!='თიმი'&&chosenPosition!='პოზიცია'
+      //   ){
+      //     setPage(page+1)
+      //   }
+      // }else{
+        setPage(page+1)
+      // }
     }
-    const goThirdPage=(e)=>{
+    const backFunction=(e)=>{
       e.preventDefault();
-      if(name.trim().length>=2&&langDetectorRegex.test(name)&&
-      lastName.trim().length>2&&langDetectorRegex.test(lastName)&&
-      telRegex.test(phone)&&phone.trim().length===13&&
-      emailRegex.test(email)&&chosenTeam!='თიმი'&&chosenPosition!='პოზიცია'
-      ){
-        setSecondPage(false)
-        setThirdPage(true)
-      }
+      setPage(page-1)
+    }
     
-      if(name.trim().length<2){
-        setNamesErrors(true)
-      }else{
-        setNamesErrors(false)
-      }
-      if(lastName.trim().length<2||!langDetectorRegex.test(lastName)){
-        setLastNameErrors(true)
-      }else{
-        setLastNameErrors(false)
-      }
-      if(!langDetectorRegex.test(name)){
-        setLanErrors(true)
-      }else{
-        setLanErrors(false)
-      }
-      if(chosenTeam=='თიმი'){
-        setSelectError(true)
-      }else{
-        setSelectError(false)
-      }
-      if(chosenTeam!=='თიმი'&&chosenPosition=='პოზიცია'){
-        setSelectError2(true)
-      }else{
-        setSelectError2(false)
-      }
-      if(!emailRegex.test(email)){
-        setEmailError(true)
-      }else{
-        setEmailError(false)
-      }
-      if(phone.trim().length!==13||!telRegex.test(phone)){
-        setPhoneError(true)
-      }else{
-        setPhoneError(false)
-      }
-    }
-    const value={goNextPage,returnSecondPage,namesErrors,returnPreviousPage,goThirdPage,secondPage,firstPage,thirdPage,name,lastName,email,phone,
-    changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,changePosition,phoneError,emailError,selectError2,
-    chosenTeam,chosenPosition,selectError}
+    const value={namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
+      changePosition,phoneError,emailError,selectError2,chosenTeam,chosenPosition,selectError,backFunction,goFunction,page}
   return (
     <div>
       <navContext.Provider value={value}>
