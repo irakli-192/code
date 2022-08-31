@@ -7,7 +7,9 @@ import { thirdPageContext } from '../Context/ThirdPageContext.js'
 
 function ThirdPage() {
   const[file,setFile]=useState(null)
-  const{laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,SelectLaptop,selectCPU,SelectCPU,CPUInput,InputCpu}=useContext(thirdPageContext)
+  const{laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,SelectLaptop,
+    selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,
+    date,Date,cost,Cost,conditionLaptop,Condition}=useContext(thirdPageContext)
   const{backFunction}=useContext(navContext)
   const uploadPhoto=(e)=>{
     setFile(e.target.files[0])
@@ -62,27 +64,27 @@ function ThirdPage() {
                 </div>
                 <div className='middle_inputs_laptop'>
                   <label>CPU-ს ნაკადი</label>
-                  <input type='text' placeholder='365'  className='middle_inputs_CPU_input'/>
+                  <input type='text' placeholder='365' value={stream} onChange={Stream} className='middle_inputs_CPU_input'/>
                   <span>მხოლოდ ციფრები </span>
                 </div>
               </div>
               <div className='middle_bottom'>
                 <div className='middle_bottom_ram'>
                   <label>ლეპტოპის RAM-ი</label>
-                  <input type='text' placeholder='16' className='middle_bottom_ram_input'/>
+                  <input type='text' placeholder='16' value={ram} onChange={Ram} className='middle_bottom_ram_input'/>
                   <span className='middle_bottom_ram_label'>მხოლოდ ციფრები </span>
                 </div>
                 <div>
                   <label className='label_ram'>მეხსიერების ტიპი</label>
                   <div className='radio'>
                     <div className='SSD'>
-                      <input type='radio' value='SSD' name="memory" className='radio_input'/>
+                      <input type='radio'  value={memory} onChange={Memory} name="memory" className='radio_input'/>
                       <div className='radio_label'>
                         <label className='SSD_label'>SSD</label>
                       </div>
                     </div>
                     <div className='SSD'>
-                      <input type='radio' value='HDD' name="memory" className='radio_input'/>
+                      <input type='radio' value={memory} onChange={Memory} name="memory" className='radio_input'/>
                       <div className='radio_label'>
                         <label className='SSD_label'>HDD</label>
                       </div>
@@ -95,11 +97,11 @@ function ThirdPage() {
             <div className='bottom_inputs'>
               <div className='bottom_inputs_left'>
                 <label>შეძენის რიცხვი (არჩევითი)</label>
-                <input type='date' className='bottom_inputs_left_date'/>
+                <input type='date' value={date} onChange={Date} className='bottom_inputs_left_date'/>
               </div>
               <div className='bottom_inputs_right'> 
                   <label>ლეპტოპის ფასი</label>
-                  <input type='text' placeholder='0000' className='bottom_inputs_right_input'/>
+                  <input type='text' value={cost} onChange={Cost} placeholder='0000' className='bottom_inputs_right_input'/>
                   <span>მხოლოდ ციფრები </span>
               </div>
             </div>
@@ -107,13 +109,13 @@ function ThirdPage() {
                   <label>ლეპტოპის მდგომარეობა</label>
                   <div className='radio'>
                     <div className='SSD'>
-                      <input type='radio' name='condition' className='radio_input'/>
+                      <input type='radio' name='condition' value={conditionLaptop} onChange={Condition} className='radio_input'/>
                       <div className='radio_label'>
                         <label className='SSD_label'>ახალი</label>
                       </div>
                     </div>
                     <div className='SSD'>
-                      <input type='radio' name='condition' className='radio_input'/>
+                      <input type='radio' name='condition' value={conditionLaptop} onChange={Condition} className='radio_input'/>
                       <div className='radio_label'>
                         <label className='SSD_label'>მეორადი</label>
                       </div>

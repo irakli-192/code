@@ -24,6 +24,31 @@ function ThirdPageContext(props) {
   const[selectLaptop,setSelectLaptop]=useState('ლეპტოპის ბრენდი')
   const[selectCPU,setSelectCPU]=useState('CPU')
   const[CPUInput,setCPUInput]=useState('')
+  const[stream,setStream]=useState('')
+  const[memory,setMemory]=useState(false)
+  const[ram,setRam]=useState('')
+  const[date,setDate]=useState('')
+  const[cost,setCost]=useState('')
+  const[conditionLaptop,setConditionLaptop]=useState(false)
+  const Condition=(e)=>{
+    setConditionLaptop(e.target.Checked)
+  }
+  const Cost=(e)=>{
+    setCost(e.target.value)
+  }
+  const Date=(e)=>{
+    setDate(e.target.value)
+  }
+  const Ram=(e)=>{
+    setRam(e.target.value)
+  }
+  const Memory=(e)=>{
+    setMemory(e.target.checked)
+    
+  }
+  const Stream=(e)=>{
+    setStream(e.target.value)
+  }
   const InputCpu=(e)=>{
     setCPUInput(e.target.value)
   }
@@ -34,13 +59,14 @@ function ThirdPageContext(props) {
     setLaptopName(e.target.value)
   }
   const SelectLaptop=(e)=>{
-    setSelectLaptop(e.target.value)
+    setSelectLaptop(e)
   }
   const GoSavePage=(e)=>{
     e.preventDefault()
     setPage(page+1)
   }
-  const value={laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,SelectLaptop,selectCPU,SelectCPU,CPUInput,InputCpu}
+  const value={laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,
+    SelectLaptop,selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,date,Date,cost,Cost,conditionLaptop,Condition}
 
     
 
