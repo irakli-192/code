@@ -32,48 +32,52 @@ function ThirdPage() {
               </button>
             </div>
             <div className='top_inputs'>
-              <div>
-                <label>ლეპტოპის სახელი</label>
-                <input type='text' placeholder='HP'/>
-                <span>ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
+              <label>ლეპტოპის სახელი</label>
+              <div className='leptop_name'>
+                <input type='text' placeholder='HP' className='leptop_name_input'/>
+                <select className='brand_select'>
+                  <option>ლეპტოპის ბრენდი</option>
+                </select>
               </div>
-              <select>
-                <option>ლეპტოპის ბრენდი</option>
-              </select>
+              <span className='third_span'>ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
             </div>
             <div className='grey_line'></div>
             <div className='middle_inputs'>
               <div className='middle_top'>
-                <select>
+                <select className='middle_top_select'>
                   <option>CPU</option>
                 </select>
-                <div>
+                <div className='middle_inputs_CPU'>
                   <label>CPU-ს ბირთვი</label>
-                  <input type='text' placeholder='14'/>
+                  <input type='text' placeholder='14' className='middle_inputs_CPU_input'/>
                   <span>მხოლოდ ციფრები </span>
                 </div>
-                <div>
+                <div className='middle_inputs_laptop'>
                   <label>ლეპტოპის სახელი</label>
-                  <input type='text' placeholder='365'/>
+                  <input type='text' placeholder='365' className='middle_inputs_CPU_input'/>
                   <span>მხოლოდ ციფრები </span>
                 </div>
               </div>
               <div className='middle_bottom'>
-                <div>
+                <div className='middle_bottom_ram'>
                   <label>ლეპტოპის RAM-ი</label>
-                  <input type='text' placeholder='16'/>
-                  <span>მხოლოდ ციფრები </span>
+                  <input type='text' placeholder='16' className='middle_bottom_ram_input'/>
+                  <span className='middle_bottom_ram_label'>მხოლოდ ციფრები </span>
                 </div>
                 <div>
-                  <label>მეხსიერების ტიპი</label>
-                  <div>
-                    <div>
-                      <label>SSD</label>
-                      <input type='radio'/>
+                  <label className='label_ram'>მეხსიერების ტიპი</label>
+                  <div className='radio'>
+                    <div className='SSD'>
+                      <input type='radio' value='SSD' name="memory" className='radio_input'/>
+                      <div className='radio_label'>
+                        <label className='SSD_label'>SSD</label>
+                      </div>
                     </div>
-                    <div>
-                      <label>HDD</label>
-                      <input type='radio'/>
+                    <div className='SSD'>
+                      <input type='radio' value='HDD' name="memory" className='radio_input'/>
+                      <div className='radio_label'>
+                        <label className='SSD_label'>HDD</label>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -81,28 +85,36 @@ function ThirdPage() {
             </div>
             <div className='grey_line'></div>
             <div className='bottom_inputs'>
-              <div>
-                <label></label>
-                <input type='date'/>
+              <div className='bottom_inputs_left'>
+                <label>შეძენის რიცხვი (არჩევითი)</label>
+                <input type='date' className='bottom_inputs_left_date'/>
               </div>
-              <div>
+              <div className='bottom_inputs_right'> 
                   <label>ლეპტოპის ფასი</label>
-                  <input type='text' placeholder='0000'/>
+                  <input type='text' placeholder='0000' className='bottom_inputs_right_input'/>
                   <span>მხოლოდ ციფრები </span>
               </div>
             </div>
-            <div>
-                  <label>მეხსიერების ტიპი</label>
-                  <div>
-                    <div>
-                      <label>SSD</label>
-                      <input type='radio'/>
+            <div className='last_inputs'>
+                  <label>ლეპტოპის მდგომარეობა</label>
+                  <div className='radio'>
+                    <div className='SSD'>
+                      <input type='radio' name='condition' className='radio_input'/>
+                      <div className='radio_label'>
+                        <label className='SSD_label'>ახალი</label>
+                      </div>
                     </div>
-                    <div>
-                      <label>HDD</label>
-                      <input type='radio'/>
+                    <div className='SSD'>
+                      <input type='radio' name='condition' className='radio_input'/>
+                      <div className='radio_label'>
+                        <label className='SSD_label'>მეორადი</label>
+                      </div>
                     </div>
                   </div>
+            </div>
+            <div className='nav_buttons'>
+              <button className='back'>უკან</button>
+              <button className='save'>დამახსოვრება</button>
             </div>
           </form>
         </div>

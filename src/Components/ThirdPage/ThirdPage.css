@@ -19,7 +19,6 @@
 }
 .box{
     width: 1226px;
-    height: 973px;
     background-color: white;
     border-radius: 18px;
     margin-bottom: 15px;
@@ -70,6 +69,7 @@
     align-items: center;
     border:2px dashed #4386A9;
     padding-top: 110px;
+    margin-bottom: 40px;
     /* cursor: pointer; */
 }
 .drop_zone_text{
@@ -108,4 +108,189 @@
     left: 0;
     opacity: 0;
     position: absolute;
+}
+.leptop_name{
+    display: flex;
+    justify-content: space-between;    
+}
+.leptop_name_input{
+    height: 50px;
+    width:400px;
+    border-radius: 8px;
+    border: 2px solid #a7cfe9;
+}
+.top_inputs{
+    display: flex;
+    flex-direction: column;
+    
+}
+.brand_select{
+    height: 50px;
+    width:400px;
+    border: none;
+    background: #EBEBEB;
+    border-radius: 8px;
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    padding-left: 10px;
+    letter-spacing: 0.04em;
+
+color: #000000;
+
+}
+.third_span{
+    margin-top: 6px;
+    font-family: HelveticaNeue;
+    margin-bottom: 40px;
+}
+.grey_line{
+    width: 878px;
+    height:0px;
+    margin-bottom: 40px;
+    border: 1px solid #C7C7C7;
+}
+.middle_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.middle_inputs_CPU{
+    display: flex;
+    flex-direction: column;
+    
+}
+.middle_inputs_laptop{
+    display: flex;
+    flex-direction: column;
+    
+}
+.middle_top_select{
+    width: 277px;
+    height: 60px;
+    background: #EBEBEB;
+    border-radius: 8px;
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+    color: #000000;
+    padding-left: 10px;
+    border:none;
+}
+.middle_inputs_CPU_input{
+    width: 277px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid #a7cfe9;
+    margin-bottom: 14px;
+}
+.middle_bottom{
+    display: flex;
+}
+.middle_bottom_ram{
+    display: flex;
+    flex-direction: column;
+    
+}
+.middle_bottom_ram_input{
+    height: 50px;
+    width:400px;
+    border-radius: 8px;
+    border: 2px solid #a7cfe9;
+    margin-bottom: 10px;
+}
+.middle_bottom_ram{
+    margin-right: 80px;
+}
+.radio{
+    display: flex;
+    margin-top: 23px;
+
+}
+.SSD{
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+   
+    
+}
+.radio_input{
+    width: 20px;
+    height: 20px;
+    border: 2px salmon;
+}
+.radio_input{
+    margin-right: 20px;
+}
+.middle_bottom_ram_label{
+    margin-bottom: 50px;
+}
+.bottom_inputs_left{
+    display: flex;
+    flex-direction: column;
+}
+.bottom_inputs_left_date{
+    height: 50px;
+    width:400px;
+    border-radius: 8px;
+    border: 2px solid #a7cfe9;
+}
+.bottom_inputs_right{
+    display: flex;
+    flex-direction: column;
+}
+.bottom_inputs_right_input{
+    height: 50px;
+    width:400px;
+    border-radius: 8px;
+    border: 2px solid #a7cfe9;
+    margin-bottom: 10px;
+}
+.bottom_inputs{
+    display: flex;
+    justify-content: space-between;
+}
+.last_inputs{
+    margin-bottom: 70px;
+    
+}
+.nav_buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.back{
+    color: #62A1EB;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    line-height: 21px;
+    font-family: HelveticaNeue;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+.save{
+    width: 219px;
+    height: 60px;
+    background-color: #62A1EB;
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    border:none;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+.SSD_label{
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight:500;
+    font-size: 16px;
 }
