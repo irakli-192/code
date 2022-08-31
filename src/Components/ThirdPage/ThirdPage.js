@@ -8,7 +8,7 @@ import { thirdPageContext } from '../Context/ThirdPageContext.js'
 function ThirdPage() {
   const[file,setFile]=useState(null)
   const{laptop,CPU}=useContext(thirdPageContext)
-  const{backFunction}=useContext(navContext)
+  const{backFunction,goFunction}=useContext(navContext)
   const uploadPhoto=(e)=>{
     setFile(e.target.files[0])
     
@@ -122,7 +122,7 @@ function ThirdPage() {
             </div>
             <div className='nav_buttons'>
               <button className='back' onClick={backFunction}>უკან</button>
-              <button className='save'>დამახსოვრება</button>
+              <button className='save' onClick={goFunction}>დამახსოვრება</button>
             </div>
           </form>
         </div>
