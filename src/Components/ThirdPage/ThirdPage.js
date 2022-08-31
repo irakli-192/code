@@ -7,8 +7,8 @@ import { thirdPageContext } from '../Context/ThirdPageContext.js'
 
 function ThirdPage() {
   const[file,setFile]=useState(null)
-  const{laptop,CPU}=useContext(thirdPageContext)
-  const{backFunction,goFunction}=useContext(navContext)
+  const{laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,SelectLaptop,selectCPU,SelectCPU,CPUInput,InputCpu}=useContext(thirdPageContext)
+  const{backFunction}=useContext(navContext)
   const uploadPhoto=(e)=>{
     setFile(e.target.files[0])
     
@@ -17,12 +17,12 @@ function ThirdPage() {
     <div className='parent'>
       <img src={Group4} onClick={backFunction} className='returnmark'/>
       <div className='main_box'>
-      <div className='headers'>
+      <div className='headers2'>
           <div className='employe'>
             <h2 className='personal_info'>თანამშრომლის ინფო</h2>
             <h2 className='h2'>ლეპტოპის მახასიათებლები</h2>
           </div>
-            <div className='line'></div>
+            <div className='line2'></div>
         </div>
         <div className='box'>
           <form>
@@ -36,8 +36,8 @@ function ThirdPage() {
             <div className='top_inputs'>
               <label>ლეპტოპის სახელი</label>
               <div className='leptop_name'>
-                <input type='text' placeholder='HP' className='leptop_name_input'/>
-                <select className='brand_select'>
+                <input type='text' placeholder='HP' className='leptop_name_input' value={laptopName} onChange={LaptopName}/>
+                <select className='brand_select' value={selectLaptop} onChange={SelectLaptop}>
                   <option>ლეპტოპის ბრენდი</option>
                   {laptop.map(item=>{
                     return <option key={item.id}>{item.name}</option>
@@ -49,7 +49,7 @@ function ThirdPage() {
             <div className='grey_line'></div>
             <div className='middle_inputs'>
               <div className='middle_top'>
-                <select className='middle_top_select'>
+                <select value={selectCPU} onChange={SelectCPU} className='middle_top_select'>
                   <option>CPU</option>
                   {CPU.map(item=>{
                     return <option key={item.id}>{item.name}</option>
@@ -57,12 +57,12 @@ function ThirdPage() {
                 </select>
                 <div className='middle_inputs_CPU'>
                   <label>CPU-ს ბირთვი</label>
-                  <input type='text' placeholder='14' className='middle_inputs_CPU_input'/>
+                  <input type='text' placeholder='14' value={CPUInput} onChange={InputCpu} className='middle_inputs_CPU_input'/>
                   <span>მხოლოდ ციფრები </span>
                 </div>
                 <div className='middle_inputs_laptop'>
-                  <label>ლეპტოპის სახელი</label>
-                  <input type='text' placeholder='365' className='middle_inputs_CPU_input'/>
+                  <label>CPU-ს ნაკადი</label>
+                  <input type='text' placeholder='365'  className='middle_inputs_CPU_input'/>
                   <span>მხოლოდ ციფრები </span>
                 </div>
               </div>
@@ -122,7 +122,7 @@ function ThirdPage() {
             </div>
             <div className='nav_buttons'>
               <button className='back' onClick={backFunction}>უკან</button>
-              <button className='save' onClick={goFunction}>დამახსოვრება</button>
+              <button className='save' onClick={GoSavePage}>დამახსოვრება</button>
             </div>
           </form>
         </div>

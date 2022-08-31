@@ -28,9 +28,12 @@
 
 
 }
-.headers{
+.headers2{
     display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
+    align-items: flex-end;
+    
     margin-top: 20px;
     font-style: normal;
     font-weight: 700;
@@ -48,12 +51,12 @@
     margin-right: 66px;
 }
 .line2{
-    width: 185px;
+    margin-right: 5px;
+    width: 263px;
     height: 0px;
     border: 1px solid #000000;
     top:0;
     margin-top: 10px;
-    margin-left:5px;
 }
 .RedLogo{
     margin-top: 20px;
