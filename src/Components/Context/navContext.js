@@ -50,16 +50,22 @@ function NavContext(props) {
         setSecondPage(false)
         setFirstPage(true)
     }
+    const returnSecondPage=(e)=>{
+      e.preventDefault();
+      setThirdPage(false)
+      setSecondPage(true)
+    }
     const goThirdPage=(e)=>{
       e.preventDefault();
-      // if(name.trim().length>=2&&langDetectorRegex.test(name)&&
-      // lastName.trim().length>2&&langDetectorRegex.test(lastName)&&
-      // telRegex.test(phone)&&phone.trim().length===13&&
-      // emailRegex.test(email)&&chosenTeam!='თიმი'&&chosenPosition!='პოზიცია'
-      // ){
+      if(name.trim().length>=2&&langDetectorRegex.test(name)&&
+      lastName.trim().length>2&&langDetectorRegex.test(lastName)&&
+      telRegex.test(phone)&&phone.trim().length===13&&
+      emailRegex.test(email)&&chosenTeam!='თიმი'&&chosenPosition!='პოზიცია'
+      ){
         setSecondPage(false)
         setThirdPage(true)
-      // }
+      }
+    
       if(name.trim().length<2){
         setNamesErrors(true)
       }else{
@@ -96,7 +102,7 @@ function NavContext(props) {
         setPhoneError(false)
       }
     }
-    const value={goNextPage,namesErrors,returnPreviousPage,goThirdPage,secondPage,firstPage,thirdPage,name,lastName,email,phone,
+    const value={goNextPage,returnSecondPage,namesErrors,returnPreviousPage,goThirdPage,secondPage,firstPage,thirdPage,name,lastName,email,phone,
     changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,changePosition,phoneError,emailError,selectError2,
     chosenTeam,chosenPosition,selectError}
   return (

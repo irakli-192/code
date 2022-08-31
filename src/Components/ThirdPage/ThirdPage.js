@@ -6,14 +6,14 @@ import { navContext } from '../Context/navContext'
 
 function ThirdPage() {
   const[file,setFile]=useState(null)
-  const{returnPreviousPage}=useContext(navContext)
+  const{returnPreviousPage,returnSecondPage}=useContext(navContext)
   const uploadPhoto=(e)=>{
     setFile(e.target.files[0])
     
   }
   return (
     <div className='parent'>
-      <img src={Group4} onClick={returnPreviousPage} className='returnmark'/>
+      <img src={Group4} onClick={returnSecondPage} className='returnmark'/>
       <div className='main_box'>
       <div className='headers'>
           <div className='employe'>
@@ -113,7 +113,7 @@ function ThirdPage() {
                   </div>
             </div>
             <div className='nav_buttons'>
-              <button className='back'>უკან</button>
+              <button className='back' onClick={returnSecondPage}>უკან</button>
               <button className='save'>დამახსოვრება</button>
             </div>
           </form>
