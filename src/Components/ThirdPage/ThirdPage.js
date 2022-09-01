@@ -8,6 +8,7 @@ import { thirdPageContext } from '../Context/ThirdPageContext.js'
 function ThirdPage() {
   const[file,setFile]=useState(null)
   const{laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,SelectLaptop,
+    laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
     selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,
     date,Date,cost,Cost,conditionLaptop,Condition}=useContext(thirdPageContext)
   const{backFunction}=useContext(navContext)
@@ -97,7 +98,7 @@ function ThirdPage() {
             <div className='bottom_inputs'>
               <div className='bottom_inputs_left'>
                 <label>შეძენის რიცხვი (არჩევითი)</label>
-                <input type='date' value={date} onChange={Date} className='bottom_inputs_left_date'/>
+                <input type='string' value={date} onChange={Date} className='bottom_inputs_left_date' placeholder='დდ / თთ / წწწწ'/>
               </div>
               <div className='bottom_inputs_right'> 
                   <label>ლეპტოპის ფასი</label>

@@ -41,52 +41,52 @@ function NavContext(props) {
   
     const goFunction=(e)=>{
       e.preventDefault();
-      // if(page===2){
-      //   if(name.trim().length<2){
-      //     setNamesErrors(true)
-      //   }else{
-      //     setNamesErrors(false)
-      //   }
-      //   if(lastName.trim().length<2||!langDetectorRegex.test(lastName)){
-      //     setLastNameErrors(true)
-      //   }else{
-      //     setLastNameErrors(false)
-      //   }
-      //   if(!langDetectorRegex.test(name)){
-      //     setLanErrors(true)
-      //   }else{
-      //     setLanErrors(false)
-      //   }
-      //   if(chosenTeam=='თიმი'){
-      //     setSelectError(true)
-      //   }else{
-      //     setSelectError(false)
-      //   }
-      //   if(chosenTeam!=='თიმი'&&chosenPosition=='პოზიცია'){
-      //     setSelectError2(true)
-      //   }else{
-      //     setSelectError2(false)
-      //   }
-      //   if(!emailRegex.test(email)){
-      //     setEmailError(true)
-      //   }else{
-      //     setEmailError(false)
-      //   }
-      //   if(phone.trim().length!==13||!telRegex.test(phone)){
-      //     setPhoneError(true)
-      //   }else{
-      //     setPhoneError(false)
-      //   }
-      //     if(name.trim().length>=2&&langDetectorRegex.test(name)&&
-      //   lastName.trim().length>2&&langDetectorRegex.test(lastName)&&
-      //   telRegex.test(phone)&&phone.trim().length===13&&
-      //   emailRegex.test(email)&&chosenTeam!='თიმი'&&chosenPosition!='პოზიცია'
-      //   ){
-      //     setPage(page+1)
-      //   }
-      // }else{
+      if(page===2){
+        // if(name.trim().length<2){
+        //   setNamesErrors(true)
+        // }else{
+        //   setNamesErrors(false)
+        // }
+        // if(lastName.trim().length<2||!langDetectorRegex.test(lastName)){
+        //   setLastNameErrors(true)
+        // }else{
+        //   setLastNameErrors(false)
+        // }
+        // if(!langDetectorRegex.test(name)){
+        //   setLanErrors(true)
+        // }else{
+        //   setLanErrors(false)
+        // }
+        // if(chosenTeam=='თიმი'){
+        //   setSelectError(true)
+        // }else{
+        //   setSelectError(false)
+        // }
+        // if(chosenTeam!=='თიმი'&&chosenPosition=='პოზიცია'){
+        //   setSelectError2(true)
+        // }else{
+        //   setSelectError2(false)
+        // }
+        // if(!emailRegex.test(email)){
+        //   setEmailError(true)
+        // }else{
+        //   setEmailError(false)
+        // }
+        // if(phone.trim().length!==13||!telRegex.test(phone)){
+        //   setPhoneError(true)
+        // }else{
+        //   setPhoneError(false)
+        // }
+        //   if(name.trim().length>=2&&langDetectorRegex.test(name)&&
+        // lastName.trim().length>2&&langDetectorRegex.test(lastName)&&
+        // telRegex.test(phone)&&phone.trim().length===13&&
+        // emailRegex.test(email)&&chosenTeam!='თიმი'&&chosenPosition!='პოზიცია'
+        // ){
+          setPage(page+1)
+        // }
+      }else{
         setPage(page+1)
-      // }
+      }
     }
     const backFunction=(e)=>{
       e.preventDefault();
