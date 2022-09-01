@@ -6,7 +6,7 @@ function FourthPage() {
   const{setPage}=useContext(navContext)
   const mainPage=(e)=>{
     e.preventDefault();
-    setPage(2)
+    setPage(1)
   }
   return (
     <div className='gray_box'>

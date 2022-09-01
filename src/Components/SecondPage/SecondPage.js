@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './SecondPage.css'
 import logo2 from '../../assets/logo2.png'
 import Group4 from '../../assets/Group4.png'
@@ -10,6 +10,7 @@ function SecondPage() {
   const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,backFunction,phoneError,emailError,
     changeTeam,chosenTeam,namesErrors,lanErrors,changePosition,lastNameErrors,chosenPosition,selectError2,goFunction}=useContext(navContext)
   const{team,position}=useContext(fetchContext)
+  
   return (
     <div className='parent'>
       <img src={Group4} onClick={backFunction} className='returnmark'/>

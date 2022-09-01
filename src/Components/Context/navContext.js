@@ -1,4 +1,4 @@
-import React,{createContext, useContext, useState} from 'react'
+import React,{createContext, useContext, useEffect, useState} from 'react'
 
 export const navContext=createContext()
 const langDetectorRegex=/^[ა-ჰ\s]*$/;
@@ -20,6 +20,22 @@ function NavContext(props) {
     const[phone,setPhone]=useState('')
     const[chosenTeam,setChosenTeam]=useState('თიმი')
     const[chosenPosition,setChosenPosition]=useState('პოზიცია')
+    // const[saveData,setSaveDate]=useState({})
+    let datas={name,lastName,chosenTeam,chosenPosition,phone,email}
+    useEffect(()=>{
+      const formData=window.localStorage.getItem("dataObj")
+      const form=JSON.parse(formData)
+      setName(form.name)
+      setLastName(form.lastName)
+      setChosenTeam(form.chosenTeam)
+      setPhone(form.phone)
+      setEmail(form.email)
+      setChosenPosition(form.chosenPosition)
+    },[])
+    
+    useEffect(()=>{
+      window.localStorage.setItem('dataObj',JSON.stringify(datas))
+    })
     const changeName=(e)=>{
       setName(e.target.value)
     }
