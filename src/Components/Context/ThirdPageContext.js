@@ -3,7 +3,6 @@ import { navContext } from './navContext';
 let lapNameRegex=/^[a-zA-Z0-9_+=()!@#$%\^&*']*$/
 let digRegex=/^\d+$/;
 export const thirdPageContext=createContext();
-console.log('yes')
 function ThirdPageContext(props) {
   const{page,setPage}=useContext(navContext)
   const[laptop,setLaptop]=useState([])
@@ -27,6 +26,10 @@ function ThirdPageContext(props) {
   const[selectCPUError,setSelectCPUError]=useState(false)
   const[CPUInputError,setCPUInputError]=useState(false)
   const[streamError,setStreamError]=useState(false)
+  const[ramError,setRamError]=useState(false)
+  const[ramTypeError,setRamTypeError]=useState(false)
+  const[costError,setCostError]=useState(false)
+  const[conditionError,setConditionError]=useState(false)
   
   const[laptopName,setLaptopName]=useState('')
   const[selectLaptop,setSelectLaptop]=useState('ლეპტოპის ბრენდი')
@@ -70,40 +73,60 @@ function ThirdPageContext(props) {
   const SelectLaptop=(e)=>{
     setSelectLaptop(e.target.value)
   }
-  const valid=laptopName.match(lapNameRegex)&&laptopName.trim().length>0&&selectLaptop!='ლეპტოპის ბრენდი'&&selectCPU!='CPU'&&
-  CPUInput.match(digRegex)&&stream.match(digRegex)&&memory&&cost.match(digRegex)&&conditionLaptop
+  const valid=lapNameRegex.test(laptopName)&&laptopName.trim().length>0&&selectLaptop!='ლეპტოპის ბრენდი'&&selectCPU!='CPU'&&
+  digRegex.test(CPUInput)&&digRegex.test(stream)&&memory&&digRegex.test(cost)&&conditionLaptop&&digRegex.test(ram)
   const GoSavePage=(e)=>{
     e.preventDefault()
-    // if(!laptopName.test(lapNameRegex)){
-      //   setLaptopNameError(true)
-      // }else{
-        //   setLaptopNameError(false)
-        // }
-        // if(selectLaptop=='ლეპტოპის ბრენდი'){
-          //   setSelectLaptopError(true)
-          // }else{
-            //   setSelectLaptopError(false)
-            // }
-            // if(selectCPU=='CPU'){
-    //   setSelectCPUError(true)
-    // }else{
-    //   setSelectCPUError(false)
-    // }
-    // if(!CPUInput.test(digRegex)){
-    //   setCPUInputError(true)
-    // }else{
-    //   setCPUInputError(false)
-    // }
-    // if(!stream.test(digRegex)){
-    //   setStreamError(true)
-    // }else{
-    //   setStreamError(false)
-    // }
+    if(!lapNameRegex.test(laptopName)||laptopName.trim().length===0){
+      setLaptopNameError(true)      
+    }else{
+      setLaptopNameError(false)
+    }
+    if(selectLaptop=='ლეპტოპის ბრენდი'){
+      setSelectLaptopError(true)
+    }else{
+      setSelectLaptopError(false)
+    }
+    if(selectCPU=='CPU'){
+      setSelectCPUError(true)
+    }else{
+      setSelectCPUError(false)
+    }
+    if(!digRegex.test(CPUInput)){
+      setCPUInputError(true)
+    }else{
+      setCPUInputError(false)
+    }
+    if(!digRegex.test(stream)){
+      setStreamError(true)
+    }else{
+      setStreamError(false)
+    }
+    if(!digRegex.test(ram)){
+      setRamError(true)
+    }else{
+      setRamError(false)
+    }
+    if(memory==false){
+      setRamTypeError(true)
+    }else{
+      setRamTypeError(false)
+    }
+    if(!digRegex.test(cost)){
+      setCostError(true)
+    }else{
+      setCostError(false)
+    }
+    if(!conditionLaptop){
+      setConditionError(true)
+    }else{
+      setConditionError(false)
+    }
     if(valid){
       setPage(page+1)
     }
   }
-  const value={laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
+  const value={conditionError,costError,ramTypeError,ramError,laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
     SelectLaptop,selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,date,Date,cost,Cost,conditionLaptop,Condition}
 
     

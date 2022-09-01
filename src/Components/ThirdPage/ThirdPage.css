@@ -297,6 +297,100 @@ color: #000000;
     font-weight:500;
     font-size: 16px;
 }
-.laptop_name.laptopNameError input{
-    border:solid red;
+
+.label_ram{
+    margin-right:10px;
+   vertical-align: middle;
+
+    
+}
+.vector{
+   vertical-align: middle;
+   display: none;
+
+}
+.label_ram{
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: 700;
+    display: inline;
+    font-size: 18px;
+    line-height: 21px;
+}
+.leptop_name_input.laptopNameError{
+    border:solid #E52F2F;
+}
+.brand_select.laptopNameError{
+    border:solid #E52F2F;
+
+}
+.top_inputs.laptopNameError label{
+    color:#E52F2F;
+}
+.top_inputs.laptopNameError span{
+    color:#E52F2F;
+}
+.middle_top_select.laptopNameError {
+    border:solid #E52F2F;
+}
+.middle_inputs_CPU.laptopNameError label{
+    color: #E52F2F;
+}
+.middle_inputs_CPU.laptopNameError input{
+    border: solid #E52F2F;
+}
+.middle_inputs_CPU.laptopNameError span{
+    color: #E52F2F;
+}
+.middle_inputs_CPU.laptopNameError2 label{
+    color: #E52F2F;
+}
+.middle_inputs_CPU.laptopNameError2 input{
+    border: solid #E52F2F;
+}
+.middle_inputs_CPU.laptopNameError2 span{
+    color: #E52F2F;
+}
+.middle_bottom_ram.laptopNameError input{
+    border: solid #E52F2F;
+}
+.middle_bottom_ram.laptopNameError label{
+    color: #E52F2F;
+}
+.middle_bottom_ram.laptopNameError span{
+    color: #E52F2F;
+}
+.radio_option.laptopNameError h3{
+    color: #E52F2F;
+}
+.radio_option.laptopNameError img{
+    display: inline;
+}
+.bottom_inputs_right.laptopNameError label{
+    color: #E52F2F;
+
+}
+.bottom_inputs_right.laptopNameError span{
+    color: #E52F2F;
+}
+.bottom_inputs_right.laptopNameError input{
+    border: solid #E52F2F;
+
+}
+.condition_laptop{
+    vertical-align: middle;
+    margin-right:10px;
+    display: inline;
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: 700;
+    display: inline;
+    font-size: 18px;
+    line-height: 21px;
+}
+.last_inputs.laptopNameError h3{
+    color: #E52F2F;
+}
+.last_inputs.laptopNameError img{
+    display: inline;
 }
