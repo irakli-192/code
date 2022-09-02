@@ -5,19 +5,33 @@ import Group4 from '../../assets/Group4.png'
 import { navContext } from '../Context/navContext'
 import { thirdPageContext } from '../Context/ThirdPageContext.js'
 import Vector from '../../assets/Vector.png'
+import accept from '../../assets/accept.png'
 
 function ThirdPage() {
-  const[file,setFile]=useState(null)
-  const{conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,
+  const[url,setUrl]=useState(null)
+  const[size,setSize]=useState('')
+  const[type,setType]=useState('')
+  const[notUrl,setNotUrl]=useState(true)
+  const{memory2,Memory2,conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,
     CPU,laptopName,GoSavePage,LaptopName,selectLaptop,SelectLaptop,
     laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
     selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,
     date,Date,cost,Cost,conditionLaptop,Condition}=useContext(thirdPageContext)
   const{backFunction}=useContext(navContext)
   const uploadPhoto=(e)=>{
-    setFile(e.target.files[0])
-    
+    const file=e.target.files[0];
+    console.log(file)
+    setType(file.name)
+    setSize(file.size)
+    const reader=new FileReader()
+    reader.readAsDataURL(e.target.files[0])
+    reader.onload=()=>{
+      setUrl(reader.result)
+    } 
+    setNotUrl(false)
   }
+  
+  
   return (
     <div className='parent'>
       <img src={Group4} onClick={backFunction} className='returnmark'/>
@@ -31,13 +45,26 @@ function ThirdPage() {
         </div>
         <div className='box'>
           <form>
-            <div className='drop_zone'>
+            <div className={`drop_zone ${!notUrl ? 'addstyle' : ''} `}>
               <div className='drop_zone_text'>ჩააგდე ან ატვირთე</div>
               <div className='drop_zone_text2'>ლეპტოპის ფოტო</div>
-              <button type='file' className='image_button'>ატვირთე
+              {!notUrl&&<img className='main_image' src={url}/>}
+              {notUrl&&<button type='file' className='image_button'>ატვირთე
                 <input type='file' placeholder='ატვირთე' onChange={uploadPhoto} className='inputFile'/>
-              </button>
+              </button>}
             </div>
+            {!notUrl&&<div className='add_button'>
+              <div className='left_info'>
+                <div className='accept_photo'>
+                  <img src={accept} alt='photo_uploaded_image'/>
+                </div>
+                <h5 className='photo_text'>{type}</h5>
+                 
+              </div>
+              <button type='file' className='image_button2'>თავიდან ატვირთე
+                  <input type='file' placeholder='ატვირთე' onChange={uploadPhoto} className='inputFile2'/>
+              </button>
+            </div>}
             <div className={`top_inputs ${laptopNameError ? 'laptopNameError':''}`}>
               <label>ლეპტოპის სახელი</label>
               <div className='leptop_name'>
@@ -82,13 +109,13 @@ function ThirdPage() {
                   <img src={Vector} className='vector'/>
                   <div className='radio'>
                     <div className='SSD'>
-                      <input type='radio'  value={memory} onChange={Memory} name="memory" className='radio_input'/>
+                      <input type='radio'  checked={memory} onChange={Memory} name="memory" className='radio_input'/>
                       <div className='radio_label'>
                         <label className='SSD_label'>SSD</label>
                       </div>
                     </div>
                     <div className='SSD'>
-                      <input type='radio' value={memory} onChange={Memory} name="memory" className='radio_input'/>
+                      <input type='radio' checked={memory2} onChange={Memory2} name="memory" className='radio_input'/>
                       <div className='radio_label'>
                         <label className='SSD_label'>HDD</label>
                       </div>
@@ -114,13 +141,13 @@ function ThirdPage() {
                   <img src={Vector} className='vector'/>
                   <div className='radio'>
                     <div className='SSD'>
-                      <input type='radio' name='condition' value={conditionLaptop} onChange={Condition} className='radio_input'/>
+                      <input type='radio' name='condition' checked={conditionLaptop} onChange={Condition} className='radio_input'/>
                       <div className='radio_label'>
                         <label className='SSD_label'>ახალი</label>
                       </div>
                     </div>
                     <div className='SSD'>
-                      <input type='radio' name='condition' value={conditionLaptop2} onChange={Condition2} className='radio_input'/>
+                      <input type='radio' name='condition' checked={conditionLaptop2} onChange={Condition2} className='radio_input'/>
                       <div className='radio_label'>
                         <label className='SSD_label'>მეორადი</label>
                       </div>

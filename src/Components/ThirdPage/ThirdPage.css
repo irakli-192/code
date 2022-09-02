@@ -73,7 +73,39 @@
     border:2px dashed #4386A9;
     padding-top: 110px;
     margin-bottom: 40px;
+    position: relative;
     /* cursor: pointer; */
+}
+.main_image{
+    width: 878px;
+    position: absolute;
+    top:0;
+    height: 423px;
+    border-radius: 18px;
+}
+.drop_zone.addstyle{
+    border:none;
+}
+.add_button{
+    display: flex;
+    justify-content: space-between;
+}
+ /* .accept_photo{
+    vertical-align: middle;
+} */
+.photo_text{   
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    margin-left: 10px;
+    color: #202020;
+
+} 
+.left_info{
+    display: flex;
+    align-items: center;
 }
 .drop_zone_text{
     color: #4386A9;
@@ -90,6 +122,18 @@
     font-size: 20px;
     line-height: 38px;
 }
+.image_button2{
+    background: #62A1EB;
+    border-radius: 8px;
+    width: 233px;
+    height: 60px;
+    border:none;
+    color:white;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    position: relative;
+}
 .image_button{
     background: #62A1EB;
     border-radius: 8px;
@@ -103,6 +147,14 @@
     position: relative;
     margin-top: 72px;
 
+}
+.inputFile2{
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
 }
 .inputFile{
     width: 100%;

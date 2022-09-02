@@ -11,17 +11,17 @@ function NavContext(props) {
   const[page,setPage]=useState(1)
   const[namesErrors,setNamesErrors]=useState(false)
   const[lastNameErrors,setLastNameErrors]=useState(false)
-    const[lanErrors,setLanErrors]=useState(false)
-    const[selectError,setSelectError]=useState(false)
-    const[emailError,setEmailError]=useState(false)
-    const[phoneError,setPhoneError]=useState(false)
-    const[selectError2,setSelectError2]=useState(false)
-    const[lastName,setLastName]=useState('')
-    const[email,setEmail]=useState('')
-    const[phone,setPhone]=useState('')
-    const[chosenTeam,setChosenTeam]=useState('თიმი')
-    const[chosenPosition,setChosenPosition]=useState('პოზიცია')
-    let datas={name,lastName,chosenTeam,chosenPosition,phone,email}
+  const[lanErrors,setLanErrors]=useState(false)
+  const[selectError,setSelectError]=useState(false)
+  const[emailError,setEmailError]=useState(false)
+  const[phoneError,setPhoneError]=useState(false)
+  const[selectError2,setSelectError2]=useState(false)
+  const[lastName,setLastName]=useState('')
+  const[email,setEmail]=useState('')
+  const[phone,setPhone]=useState('')
+  const[chosenTeam,setChosenTeam]=useState('თიმი')
+  const[chosenPosition,setChosenPosition]=useState('პოზიცია')
+  let datas={name,lastName,chosenTeam,chosenPosition,phone,email}
     
     useEffect(()=>{
       

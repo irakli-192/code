@@ -37,12 +37,13 @@ function ThirdPageContext(props) {
   const[CPUInput,setCPUInput]=useState('')
   const[stream,setStream]=useState('')
   const[memory,setMemory]=useState(false)
+  const[memory2,setMemory2]=useState(false)
   const[ram,setRam]=useState('')
   const[date,setDate]=useState('')
   const[cost,setCost]=useState('')
   const[conditionLaptop,setConditionLaptop]=useState(false)
   const[conditionLaptop2,setConditionLaptop2]=useState(false)
-  let datas2={laptopName,selectLaptop,selectCPU,CPUInput,stream,memory,ram,date,cost,conditionLaptop,conditionLaptop2}
+  let datas2={laptopName,selectLaptop,selectCPU,CPUInput,stream,memory,ram,date,cost,conditionLaptop,conditionLaptop2,memory2}
   useEffect(()=>{
     const formData2=window.localStorage.getItem("dataObj2")
     const form2=JSON.parse(formData2)
@@ -53,6 +54,7 @@ function ThirdPageContext(props) {
       setCPUInput(form2.CPUInput)
       setStream(form2.stream)
       setMemory(form2.memory)
+      setMemory2(form2.memory2)
       setRam(form2.ram)
       setCost(form2.cost)
       setConditionLaptop(form2.conditionLaptop)
@@ -85,7 +87,13 @@ function ThirdPageContext(props) {
     setRam(e.target.value)
   }
   const Memory=(e)=>{
-    setMemory(e.target.checked)
+    setMemory(e.target.checked)  
+    setMemory2(!e.target.checked)  
+  }
+  const Memory2=(e)=>{
+    setMemory2(e.target.checked)
+    setMemory(!e.target.checked)  
+
     
   }
   const Stream=(e)=>{
@@ -102,7 +110,7 @@ function ThirdPageContext(props) {
     setSelectLaptop(e.target.value)
   }
   const valid=lapNameRegex.test(laptopName)&&laptopName.trim().length>0&&selectLaptop!='ლეპტოპის ბრენდი'&&selectCPU!='CPU'&&
-  digRegex.test(CPUInput)&&digRegex.test(stream)&&memory&&digRegex.test(cost)&&conditionLaptop&&digRegex.test(ram)
+  digRegex.test(CPUInput)&&digRegex.test(stream)&&(memory||memory2)&&digRegex.test(cost)&&(conditionLaptop||conditionLaptop2)&&digRegex.test(ram)
   const GoSavePage=(e)=>{
     e.preventDefault()
     if(!lapNameRegex.test(laptopName)||laptopName.trim().length===0){
@@ -135,7 +143,7 @@ function ThirdPageContext(props) {
     }else{
       setRamError(false)
     }
-    if(memory==false){
+    if(!memory&&!memory2){
       setRamTypeError(true)
     }else{
       setRamTypeError(false)
@@ -155,7 +163,7 @@ function ThirdPageContext(props) {
     }
     console.log(conditionLaptop,conditionLaptop2)
   }
-  const value={conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
+  const value={memory2,Memory2,conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
     SelectLaptop,selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,date,Date,cost,Cost,conditionLaptop,Condition}
 
     
