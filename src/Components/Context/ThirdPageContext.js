@@ -30,7 +30,12 @@ function ThirdPageContext(props) {
   const[ramTypeError,setRamTypeError]=useState(false)
   const[costError,setCostError]=useState(false)
   const[conditionError,setConditionError]=useState(false)
-  
+  const[urlError,setUrlError]=useState(false)
+
+
+  const[url,setUrl]=useState(null)
+  const[type,setType]=useState('')
+  const[notUrl,setNotUrl]=useState(true)
   const[laptopName,setLaptopName]=useState('')
   const[selectLaptop,setSelectLaptop]=useState('ლეპტოპის ბრენდი')
   const[selectCPU,setSelectCPU]=useState('CPU')
@@ -43,7 +48,18 @@ function ThirdPageContext(props) {
   const[cost,setCost]=useState('')
   const[conditionLaptop,setConditionLaptop]=useState(false)
   const[conditionLaptop2,setConditionLaptop2]=useState(false)
-  let datas2={laptopName,selectLaptop,selectCPU,CPUInput,stream,memory,ram,date,cost,conditionLaptop,conditionLaptop2,memory2}
+  let datas2={laptopName,selectLaptop,selectCPU,CPUInput,stream,memory,ram,date,cost,conditionLaptop,conditionLaptop2,memory2,url}
+  const uploadPhoto=(e)=>{
+    const file=e.target.files[0];
+    console.log(file)
+    setType(file.name)
+    const reader=new FileReader()
+    reader.readAsDataURL(e.target.files[0])
+    reader.onload=()=>{
+      setUrl(reader.result)
+    } 
+    setNotUrl(false)
+  }
   useEffect(()=>{
     const formData2=window.localStorage.getItem("dataObj2")
     const form2=JSON.parse(formData2)
@@ -109,7 +125,7 @@ function ThirdPageContext(props) {
   const SelectLaptop=(e)=>{
     setSelectLaptop(e.target.value)
   }
-  const valid=lapNameRegex.test(laptopName)&&laptopName.trim().length>0&&selectLaptop!='ლეპტოპის ბრენდი'&&selectCPU!='CPU'&&
+  const valid=lapNameRegex.test(laptopName)&&laptopName.trim().length>0&&selectLaptop!='ლეპტოპის ბრენდი'&&selectCPU!='CPU'&&url!=null&&
   digRegex.test(CPUInput)&&digRegex.test(stream)&&(memory||memory2)&&digRegex.test(cost)&&(conditionLaptop||conditionLaptop2)&&digRegex.test(ram)
   const GoSavePage=(e)=>{
     e.preventDefault()
@@ -127,6 +143,9 @@ function ThirdPageContext(props) {
       setSelectCPUError(true)
     }else{
       setSelectCPUError(false)
+    }
+    if(url==null){
+      setUrlError(true)
     }
     if(!digRegex.test(CPUInput)){
       setCPUInputError(true)
@@ -163,7 +182,7 @@ function ThirdPageContext(props) {
     }
     console.log(conditionLaptop,conditionLaptop2)
   }
-  const value={memory2,Memory2,conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
+  const value={urlError,type,notUrl,uploadPhoto,url,memory2,Memory2,conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
     SelectLaptop,selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,date,Date,cost,Cost,conditionLaptop,Condition}
 
     

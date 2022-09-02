@@ -7,7 +7,7 @@ import { fetchContext } from '../Context/fetchContext'
 
 
 function SecondPage() {
-  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,backFunction,phoneError,emailError,
+  const{cursor,name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,backFunction,phoneError,emailError,
     changeTeam,chosenTeam,namesErrors,lanErrors,changePosition,lastNameErrors,chosenPosition,selectError2,goFunction}=useContext(navContext)
   const{team,position}=useContext(fetchContext)
   
@@ -18,7 +18,7 @@ function SecondPage() {
         <div className='headers'>
           <div className='employe'>
             <h2 className='personal_info'>თანამშრომლის ინფო</h2>
-            <h2 className='h2'>ლეპტოპის მახასიათებლები</h2>
+            <h2 className='h2' onClick={goFunction}>ლეპტოპის მახასიათებლები</h2>
           </div>
             <div className='line'></div>
         </div>

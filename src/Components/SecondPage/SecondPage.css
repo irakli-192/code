@@ -10,6 +10,7 @@
 .parent{
     width: 100%;
 }
+
 .main_box{
     width: 100%;
     padding-top: 40px;
@@ -51,7 +52,7 @@
     z-index: 2;
     padding-top: 43px;
     padding-left: 73px;
-
+    cursor: pointer;
 }
 .line{
     width: 185px;
@@ -128,6 +129,7 @@
     line-height: 24px;
     color: white;
     margin-bottom: 50px;
+    cursor: pointer;
 }
 .button_div{
     display: flex;
@@ -200,4 +202,7 @@ h2{
 }
 .employe{
     display: flex;
+}
+.h2{
+    cursor: pointer;
 }

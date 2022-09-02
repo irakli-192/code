@@ -6,31 +6,20 @@ import { navContext } from '../Context/navContext'
 import { thirdPageContext } from '../Context/ThirdPageContext.js'
 import Vector from '../../assets/Vector.png'
 import accept from '../../assets/accept.png'
+import stop from '../../assets/stop.png'
 
 function ThirdPage() {
-  const[url,setUrl]=useState(null)
-  const[size,setSize]=useState('')
-  const[type,setType]=useState('')
-  const[notUrl,setNotUrl]=useState(true)
-  const{memory2,Memory2,conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,
+ 
+  const{urlError,type,notUrl,url,uploadPhoto,memory2,Memory2,conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,
     CPU,laptopName,GoSavePage,LaptopName,selectLaptop,SelectLaptop,
     laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
     selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,
     date,Date,cost,Cost,conditionLaptop,Condition}=useContext(thirdPageContext)
   const{backFunction}=useContext(navContext)
-  const uploadPhoto=(e)=>{
-    const file=e.target.files[0];
-    console.log(file)
-    setType(file.name)
-    setSize(file.size)
-    const reader=new FileReader()
-    reader.readAsDataURL(e.target.files[0])
-    reader.onload=()=>{
-      setUrl(reader.result)
-    } 
-    setNotUrl(false)
+
+  const SubmitForm=(e)=>{
+    e.preventDefault()
   }
-  
   
   return (
     <div className='parent'>
@@ -38,14 +27,15 @@ function ThirdPage() {
       <div className='main_box'>
       <div className='headers2'>
           <div className='employe'>
-            <h2 className='personal_info'>თანამშრომლის ინფო</h2>
+            <h2 className='personal_info' onClick={backFunction}>თანამშრომლის ინფო</h2>
             <h2 className='h2'>ლეპტოპის მახასიათებლები</h2>
           </div>
             <div className='line2'></div>
         </div>
         <div className='box'>
-          <form>
+          <form onSubmit={SubmitForm} className={`laptop_form ${urlError ? 'urlError' :''}`}>
             <div className={`drop_zone ${!notUrl ? 'addstyle' : ''} `}>
+              {urlError&&<img src={stop} className='stop'/>}
               <div className='drop_zone_text'>ჩააგდე ან ატვირთე</div>
               <div className='drop_zone_text2'>ლეპტოპის ფოტო</div>
               {!notUrl&&<img className='main_image' src={url}/>}
@@ -156,7 +146,7 @@ function ThirdPage() {
             </div>
             <div className='nav_buttons'>
               <button className='back' onClick={backFunction}>უკან</button>
-              <button className='save' onClick={GoSavePage}>დამახსოვრება</button>
+              <button type="submit" className='save' onClick={GoSavePage}>დამახსოვრება</button>
             </div>
           </form>
         </div>
