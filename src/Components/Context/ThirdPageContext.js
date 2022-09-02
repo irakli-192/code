@@ -41,11 +41,39 @@ function ThirdPageContext(props) {
   const[date,setDate]=useState('')
   const[cost,setCost]=useState('')
   const[conditionLaptop,setConditionLaptop]=useState(false)
+  const[conditionLaptop2,setConditionLaptop2]=useState(false)
+  let datas2={laptopName,selectLaptop,selectCPU,CPUInput,stream,memory,ram,date,cost,conditionLaptop,conditionLaptop2}
+  useEffect(()=>{
+    const formData2=window.localStorage.getItem("dataObj2")
+    const form2=JSON.parse(formData2)
+    if(formData2!=null){
+      setLaptopName(form2.laptopName)
+      setSelectLaptop(form2.selectLaptop)
+      setSelectCPU(form2.selectCPU)
+      setCPUInput(form2.CPUInput)
+      setStream(form2.stream)
+      setMemory(form2.memory)
+      setRam(form2.ram)
+      setCost(form2.cost)
+      setConditionLaptop(form2.conditionLaptop)
+      setConditionLaptop2(form2.conditionLaptop2)
+      setDate(form2.date)
+    }
+  },[])
+  
+  useEffect(()=>{
+    window.localStorage.setItem('dataObj2',JSON.stringify(datas2))
+  })
   const LaptopName=(e)=>{
     setLaptopName(e.target.value)
   }
   const Condition=(e)=>{
     setConditionLaptop(e.target.checked)
+    setConditionLaptop2(!e.target.checked)
+  }
+  const Condition2=(e)=>{
+    setConditionLaptop2(e.target.checked)
+    setConditionLaptop(!e.target.checked)
   }
   const Cost=(e)=>{
     setCost(e.target.value)
@@ -117,7 +145,7 @@ function ThirdPageContext(props) {
     }else{
       setCostError(false)
     }
-    if(!conditionLaptop){
+    if(!conditionLaptop&&!conditionLaptop2){
       setConditionError(true)
     }else{
       setConditionError(false)
@@ -125,8 +153,9 @@ function ThirdPageContext(props) {
     if(valid){
       setPage(page+1)
     }
+    console.log(conditionLaptop,conditionLaptop2)
   }
-  const value={conditionError,costError,ramTypeError,ramError,laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
+  const value={conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
     SelectLaptop,selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,date,Date,cost,Cost,conditionLaptop,Condition}
 
     

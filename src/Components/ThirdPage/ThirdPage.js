@@ -8,7 +8,8 @@ import Vector from '../../assets/Vector.png'
 
 function ThirdPage() {
   const[file,setFile]=useState(null)
-  const{conditionError,costError,ramTypeError,ramError,laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,SelectLaptop,
+  const{conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,
+    CPU,laptopName,GoSavePage,LaptopName,selectLaptop,SelectLaptop,
     laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
     selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,
     date,Date,cost,Cost,conditionLaptop,Condition}=useContext(thirdPageContext)
@@ -119,7 +120,7 @@ function ThirdPage() {
                       </div>
                     </div>
                     <div className='SSD'>
-                      <input type='radio' name='condition' value={conditionLaptop} onChange={Condition} className='radio_input'/>
+                      <input type='radio' name='condition' value={conditionLaptop2} onChange={Condition2} className='radio_input'/>
                       <div className='radio_label'>
                         <label className='SSD_label'>მეორადი</label>
                       </div>

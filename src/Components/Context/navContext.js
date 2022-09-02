@@ -3,13 +3,14 @@ import React,{createContext, useContext, useEffect, useState} from 'react'
 export const navContext=createContext()
 const langDetectorRegex=/^[ა-ჰ\s]*$/;
 
+let num=0
 const telRegex=/\+\S*9\S*9\S*5\S*5\S*[976514]\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*/;
 const emailRegex=/^[^@]+@(redberry)\.ge$/;
 function NavContext(props) {
-    const[name,setName]=useState('')
-    const[page,setPage]=useState(1)
-    const[namesErrors,setNamesErrors]=useState(false)
-    const[lastNameErrors,setLastNameErrors]=useState(false)
+  const[name,setName]=useState('')
+  const[page,setPage]=useState(1)
+  const[namesErrors,setNamesErrors]=useState(false)
+  const[lastNameErrors,setLastNameErrors]=useState(false)
     const[lanErrors,setLanErrors]=useState(false)
     const[selectError,setSelectError]=useState(false)
     const[emailError,setEmailError]=useState(false)
@@ -20,19 +21,25 @@ function NavContext(props) {
     const[phone,setPhone]=useState('')
     const[chosenTeam,setChosenTeam]=useState('თიმი')
     const[chosenPosition,setChosenPosition]=useState('პოზიცია')
-    // const[saveData,setSaveDate]=useState({})
     let datas={name,lastName,chosenTeam,chosenPosition,phone,email}
+    
     useEffect(()=>{
-      const formData=window.localStorage.getItem("dataObj")
-      const form=JSON.parse(formData)
-      setName(form.name)
-      setLastName(form.lastName)
-      setChosenTeam(form.chosenTeam)
-      setPhone(form.phone)
-      setEmail(form.email)
-      setChosenPosition(form.chosenPosition)
+      
+        const formData=window.localStorage.getItem("dataObj")
+        const form=JSON.parse(formData)
+        if(formData!=null){
+          setName(form.name)
+          setLastName(form.lastName)
+          setChosenTeam(form.chosenTeam)
+          setPhone(form.phone)
+          setEmail(form.email)
+          setChosenPosition(form.chosenPosition)
+        }
+        
     },[])
     
+    
+  
     useEffect(()=>{
       window.localStorage.setItem('dataObj',JSON.stringify(datas))
     })
