@@ -16,7 +16,7 @@ function App() {
   const {page}=useContext(navContext)
   
   return (
-    <FetchContext>
+    <Fragment>
       {page===1&&<WelcomePage/>}
       {page===2&&<SecondPage/>}
       <ThirdPageContext>
@@ -24,7 +24,7 @@ function App() {
       </ThirdPageContext>
       {page===4&&<FourthPage/>}
       
-    </FetchContext>
+    </Fragment>
     
   )
 }

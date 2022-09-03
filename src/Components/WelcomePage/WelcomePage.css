@@ -49,3 +49,30 @@
     flex-direction: column;
     align-items: center;
 }
+.computer_photo{
+    display: none;
+}
+@media(max-width:390px){
+    .main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .computer_photo{
+        display: inline-block;
+    }
+    .back_photo{
+        display: none;
+        
+    }
+    .images{
+        margin-bottom: 80px;
+    }
+    .first_button{
+        width: 358px;
+    }
+    .second_button{
+        width: 358px;   
+    }
+}

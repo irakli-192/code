@@ -7,7 +7,7 @@ import { fetchContext } from '../Context/fetchContext'
 
 
 function SecondPage() {
-  const{cursor,name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,backFunction,phoneError,emailError,
+  const{name,lastName,email,phone,changeLastName,changeName,changeEmail,changePhone,selectError,backFunction,phoneError,emailError,
     changeTeam,chosenTeam,namesErrors,lanErrors,changePosition,lastNameErrors,chosenPosition,selectError2,goFunction}=useContext(navContext)
   const{team,position}=useContext(fetchContext)
   

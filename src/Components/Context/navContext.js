@@ -1,14 +1,16 @@
 import React,{createContext, useContext, useEffect, useState} from 'react'
+import FetchContext, { fetchContext } from './fetchContext';
 
 export const navContext=createContext()
 const langDetectorRegex=/^[ა-ჰ\s]*$/;
 
-let num=0
+let team_id=0
+let position_id=0;
 const telRegex=/\+\S*9\S*9\S*5\S*5\S*[976514]\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*/;
 const emailRegex=/^[^@]+@(redberry)\.ge$/;
 function NavContext(props) {
-  const[name,setName]=useState('')
-  const[cursor,setCursor]=useState(false)
+  const{team,position}=useContext(fetchContext)
+  const[name,setName]=useState('')  
   const[page,setPage]=useState(1)
   const[namesErrors,setNamesErrors]=useState(false)
   const[lastNameErrors,setLastNameErrors]=useState(false)
@@ -57,10 +59,29 @@ function NavContext(props) {
     }
     const changeTeam=(e)=>{
       setChosenTeam(e.target.value)
+      
+
     }
+    {team.map(item=>{
+      if(item.name==chosenTeam){
+          team_id=item.id 
+          return team_id      
+      }
+      
+    })}
+    {position.map(pos=>{
+      if(pos.name==chosenPosition){
+        position_id=pos.id
+        return position_id
+      }
+    })}
+  
+      
     const changePosition=(e)=>{
       setChosenPosition(e.target.value)
+      
     }
+   
   
     const goFunction=(e)=>{
       e.preventDefault();
@@ -116,7 +137,7 @@ function NavContext(props) {
       setPage(page-1)
     }
     
-    const value={cursor,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
+    const value={position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
       changePosition,phoneError,emailError,selectError2,chosenTeam,chosenPosition,selectError,backFunction,goFunction,page,setPage}
   return (
     <div>
