@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import './SecondPage.css'
 import logo2 from '../../assets/logo2.png'
 import Group4 from '../../assets/Group4.png'
+import back from '../../assets/back.png'
 import { navContext } from '../Context/navContext'
 import { fetchContext } from '../Context/fetchContext'
 
@@ -14,10 +15,14 @@ function SecondPage() {
   return (
     <div className='parent'>
       <img src={Group4} onClick={backFunction} className='returnmark'/>
+      <div className="back">
+        <img src={back} onClick={backFunction}/>
+      </div>
       <div className='main_box'>
         <div className='headers'>
           <div className='employe'>
             <h2 className='personal_info'>თანამშრომლის ინფო</h2>
+            <span className='one'>1/2</span>
             <h2 className='h2' onClick={goFunction}>ლეპტოპის მახასიათებლები</h2>
           </div>
             <div className='line'></div>
@@ -66,12 +71,13 @@ function SecondPage() {
             <div className={`second_part ${emailError ? 'selectError':''}`}>
               <label>მეილი</label>
               <input type='text' placeholder='grisha666@redberry.ge' className='inputs2' value={email} onChange={changeEmail}/>
-              <span>უნდა მთავრდებოდეს redberry.ge-ით</span>
+              <span className='redb'>უნდა მთავრდებოდეს redberry.ge-ით</span>
             </div>
             <div className={`second_part ${phoneError ? 'selectError':''}`}>
               <label>ტელეფონის ნომერი</label>
               <input type='text' placeholder='+995 598 00 07 01' className='inputs2'  value={phone} onChange={changePhone}/>
-              <span>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
+              <span className='responsive_computer'>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
+              <span className='responsive_mobile'>ქართული მობ-ნომრის ფორმატი</span>
             </div>
             <div className='button_div'>
               <button className='button' type='submit'>შემდეგი</button>
