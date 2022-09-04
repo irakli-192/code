@@ -43,6 +43,7 @@
     font-weight: 700;
     font-size: 20px;
     color: #232323;
+    
 
 }
 .main_box{
@@ -205,6 +206,7 @@ h2{
 }
 .employe{
     display: flex;
+    justify-content: space-between;
 }
 .h2{
     cursor: pointer;
@@ -219,6 +221,7 @@ h2{
 .one{
     display: none;
 }
+
 @media (max-width:390px){
     *{
         box-sizing: border-box;
@@ -251,16 +254,16 @@ h2{
         
     }
     .name{
-        width: 356px;
+        width: 358px;
     }
     .h2{
         display: none;
     }
     .inputs2{
-        width: 356px;
+        width: 358px;
     }
     .select1{
-        width: 356px;
+        width: 358px;
     }
     .line{
         display: none;
@@ -284,7 +287,7 @@ h2{
         width: 280px;
     }
     .form{
-        width: 356px;
+        width: 358px;
     }
     .RedLogo{
         display: none;
@@ -322,6 +325,14 @@ h2{
         align-items: center;
     }
     .select1 option{
-        width: 356px;
+        width: 358px;
     }
+    
+    .drop_zone_text{
+        display: none;
+    }
+    .drop_zone_text2{
+        display: none;
+    }
+
 }

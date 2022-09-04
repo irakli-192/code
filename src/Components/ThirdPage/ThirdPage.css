@@ -461,7 +461,9 @@ color: #000000;
     color: #E52F2F;
     
 }
-
+.stop_mobile{
+    display: none;
+}
 .stop{
     margin-bottom: 20px;
 }
@@ -471,6 +473,18 @@ color: #000000;
 .third_span_mobile{
     display: none;
 }
+.photo_mobile{
+    display: none;
+}
+.drop_zone_text_mobile{
+    display: none;
+}
+.responsive_texts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (max-width:390px){
     *{
         box-sizing: border-box;
@@ -502,8 +516,11 @@ color: #000000;
         margin-bottom: 30px;
     }
     .drop_zone{
-        width: 356px;
+        width: 358px;
         height: 244px;
+        display: flex;
+        position: relative;
+        
     }
     .add_button{
         display: none;
@@ -512,7 +529,7 @@ color: #000000;
         display: none;
     }
     .laptop_form{
-        width: 356px;
+        width: 358px;
         display: flex;
         flex-direction: column;
     }
@@ -521,7 +538,7 @@ color: #000000;
         flex-direction: column;
     }
     .leptop_name_input{
-        width: 356px;
+        width: 358px;
         margin-bottom: 5px;
     }
     .third_span_mobile{
@@ -531,7 +548,7 @@ color: #000000;
         display: none;
     }
     .brand_select{
-        width: 356px;
+        width: 358px;
         margin-top:20px;
         
     }
@@ -543,7 +560,7 @@ color: #000000;
         flex-direction: column;
     }
     .middle_top_select{
-        width: 356px;
+        width: 358px;
         margin-bottom: 30px;
     }
     .middle_inputs{
@@ -551,27 +568,27 @@ color: #000000;
     }
     .middle_inputs_CPU_input{
         
-        width: 356px;
+        width: 358px;
     }
     .only_num{
         margin-bottom: 30px;
     }
     .middle_bottom_ram_input{
-        width: 356px;
+        width: 358px;
     }
     .middle_bottom{
         display: flex;
         flex-direction: column;
     }
     .bottom_inputs_left_date{
-        width: 356px;
+        width: 358px;
     }
     .bottom_inputs{
         display: flex;
         flex-direction: column;
     }
     .bottom_inputs_right_input{
-        width: 356px;
+        width: 358px;
     }
     .bottom_inputs_right{
         margin-bottom: 30px;
@@ -611,5 +628,39 @@ color: #000000;
     .brand_select{
         margin-bottom: 10px;
     }
+    .photo_mobile{
+        display: inline-block;
+        border: none;
+        background: none;
+    }
+    .main_image{
+        width: 358px;
+        height: 244px;
+    }
+    .stop{
+        display: none;
+    }
+    .stop_mobile{
+        display: inline-block;
+    }
+   
+    .camera{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top:60px;
+    }
     
+    .drop_zone_text_mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .responsive_texts{
+        display: none;
+    }
 }

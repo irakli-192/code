@@ -5,6 +5,7 @@ import { navContext } from './navContext';
 let lapNameRegex=/^[a-zA-Z0-9_+=()!@#$%\^&*']*$/
 let digRegex=/^\d+$/;
 let laptop_brand_id=0
+
 export const thirdPageContext=createContext();
 const token='bf4d99efef9afdd9a75021b0d084da4b'
 function ThirdPageContext(props) {
@@ -222,21 +223,6 @@ function ThirdPageContext(props) {
     }
     if(valid){
       setPage(page+1)
-      // console.log(postObject)
-      // const a=JSON.stringify(postObject)
-      // console.log(a)
-      // const response=axios.post('https://pcfy.redberryinternship.ge/api/laptop/create',{
-      //   headers:{ "Content-Type": "multipart/form-data" },
-      //   body: postObject
-      // })
-      // console.log(response)
-      // fetch(`https://pcfy.redberryinternship.ge/api/laptop/create`,{
-      //   method:'POST',
-      //   headers:{ "Content-Type": "multipart/form-data" },
-      //   body: JSON.stringify(postObject)
-      // }).then(response=>{
-      //   console.log(response)
-      // })
       let formdata=new FormData();
       formdata.append("name",name)
       formdata.append("surname",lastName)
@@ -260,24 +246,12 @@ function ThirdPageContext(props) {
         const config = {
           headers: {
             "content-type": "multipart/form-data"
-          },
-          // withCredentials: true
+          },    
         }
-
-        const response = await axios.post('https://pcfy.redberryinternship.ge/api/laptop/create', formdata, config)
-        
-        console.log(url)
+        const response = await axios.post('https://pcfy.redberryinternship.ge/api/laptop/create', formdata, config) 
       }
-      sendData()
-      // Axios.post(
-      //   'https://pcfy.redberryinternship.ge/api/laptop/create',{
-      //     headers:{ "Content-Type": "multipart/form-data" },
-      //     body: formdata
-      //   }
-      // )
-       
-    }
-    
+      sendData()  
+    }  
   }
   const value={laptopCon,hardDrive,urlError,type,notUrl,uploadPhoto,url,memory2,Memory2,conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
     SelectLaptop,selectCPU,SelectCPU,CPUInput,InputCpu,stream,Stream,ram,Ram,Memory,memory,date,Date,cost,Cost,conditionLaptop,Condition}

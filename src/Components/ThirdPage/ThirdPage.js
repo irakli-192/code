@@ -7,6 +7,7 @@ import { thirdPageContext } from '../Context/ThirdPageContext.js'
 import Vector from '../../assets/Vector.png'
 import accept from '../../assets/accept.png'
 import stop from '../../assets/stop.png'
+import photo from '../../assets/photo.png'
 
 function ThirdPage() {
  
@@ -37,8 +38,21 @@ function ThirdPage() {
           <form onSubmit={SubmitForm} className={`laptop_form ${urlError ? 'urlError' :''}`}>
             <div className={`drop_zone ${!notUrl ? 'addstyle' : ''} `}>
               {urlError&&<img src={stop} className='stop'/>}
-              <div className='drop_zone_text'>ჩააგდე ან ატვირთე</div>
-              <div className='drop_zone_text2'>ლეპტოპის ფოტო</div>
+              <div className='camera'>
+                <button type='file' className='photo_mobile'>
+                  <input type='file' placeholder='ატვირთე' onChange={uploadPhoto} className='inputFile'/>
+                  <img src={photo} alt='photo' className='photo_mobile'/>
+                </button>
+                <div className='responsive_texts'>
+                  <div className='drop_zone_text'>ჩააგდე ან ატვირთე</div>
+                  <div className='drop_zone_text2'>ლეპტოპის ფოტო</div>
+                </div>
+                <div className='drop_zone_text_mobile'>
+                  <div>ლეპტოპის ფოტოს</div>
+                  <div>ატვირთვა</div>
+                </div>
+                {urlError&&<img src={stop} className='stop_mobile'/>}
+              </div>
               {!notUrl&&<img className='main_image' src={url}/>}
               {notUrl&&<button type='file' className='image_button'>ატვირთე
                 <input type='file' placeholder='ატვირთე' onChange={uploadPhoto} className='inputFile'/>
