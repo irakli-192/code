@@ -22,13 +22,14 @@ function ThirdPage() {
   }
   
   return (
-    <div className='parent'>
+    <div className='parent2'>
       <img src={Group4} onClick={backFunction} className='returnmark'/>
       <div className='main_box'>
       <div className='headers2'>
           <div className='employe'>
-            <h2 className='personal_info' onClick={backFunction}>თანამშრომლის ინფო</h2>
-            <h2 className='h2'>ლეპტოპის მახასიათებლები</h2>
+            <h2 className='personal_info_2' onClick={backFunction}>თანამშრომლის ინფო</h2>
+            <h2 className='h2_2'>ლეპტოპის მახასიათებლები</h2>
+            <span className='two'>2/2</span>
           </div>
             <div className='line2'></div>
         </div>
@@ -59,6 +60,7 @@ function ThirdPage() {
               <label>ლეპტოპის სახელი</label>
               <div className='leptop_name'>
                 <input type='text' placeholder='HP' className={`leptop_name_input ${laptopNameError ? 'laptopNameError':''}`} value={laptopName} onChange={LaptopName}/>
+                <span className='third_span_mobile'>ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
                 <select className={`brand_select ${selectLaptopError ?'laptopNameError':''}`} value={selectLaptop} onChange={SelectLaptop}>
                   <option>ლეპტოპის ბრენდი</option>
                   {laptop.map(item=>{
@@ -80,7 +82,7 @@ function ThirdPage() {
                 <div className={`middle_inputs_CPU ${CPUInputError ? 'laptopNameError':''}`}>
                   <label>CPU-ს ბირთვი</label>
                   <input type='text' placeholder='14' value={CPUInput} onChange={InputCpu} className='middle_inputs_CPU_input'/>
-                  <span>მხოლოდ ციფრები </span>
+                  <span className='only_num'>მხოლოდ ციფრები </span>
                 </div>
                 <div className={`middle_inputs_CPU ${streamError ? 'laptopNameError2':''}`}>
                   <label>CPU-ს ნაკადი</label>
@@ -145,7 +147,7 @@ function ThirdPage() {
                   </div>
             </div>
             <div className='nav_buttons'>
-              <button className='back' onClick={backFunction}>უკან</button>
+              <button className='back2' onClick={backFunction}>უკან</button>
               <button type="submit" className='save' onClick={GoSavePage}>დამახსოვრება</button>
             </div>
           </form>

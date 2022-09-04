@@ -7,7 +7,7 @@
     font-family: HelveticaNeue;
     src:url(../../fonts/HelveticaNeue.ttc)
 }
-.parent{
+.parent2{
     width: 100%;
 }
 .returnmark{
@@ -45,7 +45,7 @@
     flex-direction: column;
     align-items: center;
 }
-.personal_info{
+.personal_info_2{
     margin-right: 66px;
     cursor: pointer;
 }
@@ -73,8 +73,8 @@
     padding-top: 110px;
     margin-bottom: 40px;
     position: relative;
-} */
-/* .main_image{
+}
+.main_image{
     width: 878px;
     position: absolute;
     top:0;
@@ -288,6 +288,7 @@ color: #000000;
 .bottom_inputs_left{
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 .bottom_inputs_left_date{
     height: 50px;
@@ -298,6 +299,7 @@ color: #000000;
 .bottom_inputs_right{
     display: flex;
     flex-direction: column;
+
 }
 .bottom_inputs_right_input{
     height: 50px;
@@ -319,7 +321,7 @@ color: #000000;
     justify-content: space-between;
     margin-bottom: 50px;
 }
-.back{
+.back2{
     color: #62A1EB;
     border: none;
     background-color: white;
@@ -441,6 +443,7 @@ color: #000000;
     font-size: 18px;
     line-height: 21px;
 }
+
 .last_inputs.laptopNameError h3{
     color: #E52F2F;
 }
@@ -458,6 +461,155 @@ color: #000000;
     color: #E52F2F;
     
 }
+
 .stop{
     margin-bottom: 20px;
+}
+.two{
+    display: none;
+}
+.third_span_mobile{
+    display: none;
+}
+@media (max-width:390px){
+    *{
+        box-sizing: border-box;
+        font-family: HelveticaNeue;
+        
+    }
+    @font-face{
+        font-family: HelveticaNeue;
+        src:url(../../fonts/HelveticaNeue.ttc)
+    }
+    .personal_info_2{
+        display: none;
+    }
+    .line2{
+        display: none;
+    }
+    .two{
+        display: inline-block;
+        font-family: HelveticaNeue;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #898989;
+        margin-bottom: 10px;
+    }
+    .radio_option{
+        margin-bottom: 30px;
+    }
+    .drop_zone{
+        width: 356px;
+        height: 244px;
+    }
+    .add_button{
+        display: none;
+    }
+    .image_button{
+        display: none;
+    }
+    .laptop_form{
+        width: 356px;
+        display: flex;
+        flex-direction: column;
+    }
+    .leptop_name{
+        display: flex;
+        flex-direction: column;
+    }
+    .leptop_name_input{
+        width: 356px;
+        margin-bottom: 5px;
+    }
+    .third_span_mobile{
+        display: inline-block;
+    }
+    .third_span{
+        display: none;
+    }
+    .brand_select{
+        width: 356px;
+        margin-top:20px;
+        
+    }
+    .grey_line{
+        display: none;
+    }
+    .middle_top{
+        display: flex;
+        flex-direction: column;
+    }
+    .middle_top_select{
+        width: 356px;
+        margin-bottom: 30px;
+    }
+    .middle_inputs{
+        margin-top: 20px;
+    }
+    .middle_inputs_CPU_input{
+        
+        width: 356px;
+    }
+    .only_num{
+        margin-bottom: 30px;
+    }
+    .middle_bottom_ram_input{
+        width: 356px;
+    }
+    .middle_bottom{
+        display: flex;
+        flex-direction: column;
+    }
+    .bottom_inputs_left_date{
+        width: 356px;
+    }
+    .bottom_inputs{
+        display: flex;
+        flex-direction: column;
+    }
+    .bottom_inputs_right_input{
+        width: 356px;
+    }
+    .bottom_inputs_right{
+        margin-bottom: 30px;
+    }
+    .RedLogo{
+        display: none;
+    }
+    .main_box{
+        height: 100vh;
+        
+    }
+    .returnmark{
+        display: none;
+    }
+    .box{
+        width: 390px;
+        
+    }
+   
+    .employe{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .h2_2{
+        display: inline-block;
+    }
+    .third_span_mobile{
+        font-family: HelveticaNeue;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 21px;
+        color: #2E2E2E;
+        margin-bottom: 10px;
+    }
+    .brand_select{
+        margin-bottom: 10px;
+    }
+    
 } */

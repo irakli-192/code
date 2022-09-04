@@ -19,6 +19,9 @@
     top:0;
     z-index: 1;
 }
+.responsive_mobile{
+    display: none;
+}
 .box{
     width: 1226px;
     background-color: white;
@@ -276,7 +279,6 @@ h2{
         width: 100%;
         display: flex;
         justify-content: center;
-        /* padding-top: 40px; */
     }
     .headers{
         width: 280px;
@@ -294,7 +296,7 @@ h2{
     .responsive_computer{
         display: none;
     }
-    .responsive_phone{
+    .responsive_mobile{
         display: inline-block;
     }
     .second_part{
@@ -311,15 +313,15 @@ h2{
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
-        
-
-text-align: center;
-
-color: #898989;
+        text-align: center;
+        color: #898989;
     }
     .employe{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .select1 option{
+        width: 356px;
     }
 }
