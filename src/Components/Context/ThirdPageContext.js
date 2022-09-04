@@ -1,4 +1,4 @@
-import Axios from 'axios';
+import axios from 'axios';
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { fetchContext } from './fetchContext';
 import { navContext } from './navContext';
@@ -11,6 +11,7 @@ function ThirdPageContext(props) {
   const{page,setPage,team_id,position_id}=useContext(navContext)
   const[laptop,setLaptop]=useState([])
   const[CPU,setCPU]=useState([])
+  const[image,setImage]=useState(null)
   const{name,lastName,email,phone,chosenTeam,chosenPosition}=useContext(navContext)
   useEffect(()=>{
     fetch('https://pcfy.redberryinternship.ge/api/brands').then(response=>{
@@ -65,6 +66,7 @@ function ThirdPageContext(props) {
     reader.readAsDataURL(e.target.files[0])
     reader.onload=()=>{
       setUrl(reader.result)
+      setImage(file)
     } 
     setNotUrl(false)
   }
@@ -207,7 +209,7 @@ function ThirdPageContext(props) {
       email,
       token,
       laptop_name:laptopName,
-      laptop_image:url,
+      laptop_image:image,
       laptop_brand_id,
       laptop_cpu:selectCPU,
       laptop_cpu_cores:parseFloat(CPUInput),
@@ -220,36 +222,58 @@ function ThirdPageContext(props) {
     }
     if(valid){
       setPage(page+1)
-      console.log(postObject)
-      console.log(laptopCon,hardDrive)
-      fetch('https://pcfy.redberryinternship.ge/api/laptop/create',{
-        method:'POST',
-        headers:{ "Content-Type": "multipart/form-data" },
-        body: JSON.stringify(postObject)
-      }).catch(error=>{
-        console.log(error)
-      })
-      // let formdata=new FormData();
-      // formdata.append("name",name)
-      // formdata.append("surname",lastName)
-      // formdata.append("team_id",team_id)
-      // formdata.append("position_id",position_id)
-      // formdata.append("phone_number",phone)
-      // formdata.append("token",token)
-      // formdata.append("laptop_name",laptopName)
-      // formdata.append("laptop_image",url)
-      // formdata.append("laptop_brand_id",laptop_brand_id)
-      // formdata.append("laptop_cpu",selectCPU)
-      // formdata.append("laptop_cpu_cores",parseFloat(CPUInput))
-      // formdata.append("laptop_cpu_threads",parseFloat(stream))
-      // formdata.append("laptop_ram",parseFloat(ram))
-      // formdata.append("laptop_hard_drive_type",hardDrive)
-      // formdata.append("laptop_state",laptopCon)
-      // formdata.append("laptop_purchase_date",date)
-      // formdata.append("laptop_price",parseFloat(cost))
+      // console.log(postObject)
+      // const a=JSON.stringify(postObject)
+      // console.log(a)
+      // const response=axios.post('https://pcfy.redberryinternship.ge/api/laptop/create',{
+      //   headers:{ "Content-Type": "multipart/form-data" },
+      //   body: postObject
+      // })
+      // console.log(response)
+      // fetch(`https://pcfy.redberryinternship.ge/api/laptop/create`,{
+      //   method:'POST',
+      //   headers:{ "Content-Type": "multipart/form-data" },
+      //   body: JSON.stringify(postObject)
+      // }).then(response=>{
+      //   console.log(response)
+      // })
+      let formdata=new FormData();
+      formdata.append("name",name)
+      formdata.append("surname",lastName)
+      formdata.append("team_id",team_id)
+      formdata.append("email",email)
+      formdata.append("position_id",position_id)
+      formdata.append("phone_number",phone)
+      formdata.append("token",token)
+      formdata.append("laptop_name",laptopName)
+      formdata.append("laptop_image",image)
+      formdata.append("laptop_brand_id",laptop_brand_id)
+      formdata.append("laptop_cpu",selectCPU)
+      formdata.append("laptop_cpu_cores",parseFloat(CPUInput))
+      formdata.append("laptop_cpu_threads",parseFloat(stream))
+      formdata.append("laptop_ram",parseFloat(ram))
+      formdata.append("laptop_hard_drive_type",hardDrive)
+      formdata.append("laptop_state",laptopCon)
+      formdata.append("laptop_purchase_date",date)
+      formdata.append("laptop_price",parseFloat(cost))
+      const sendData = async() => { 
+        const config = {
+          headers: {
+            "content-type": "multipart/form-data"
+          },
+          // withCredentials: true
+        }
+
+        const response = await axios.post('https://pcfy.redberryinternship.ge/api/laptop/create', formdata, config)
+        
+        console.log(url)
+      }
+      sendData()
       // Axios.post(
-      //   'https://pcfy.redberryinternship.ge/api/laptop/create',
-      //   {formdata}
+      //   'https://pcfy.redberryinternship.ge/api/laptop/create',{
+      //     headers:{ "Content-Type": "multipart/form-data" },
+      //     body: formdata
+      //   }
       // )
        
     }

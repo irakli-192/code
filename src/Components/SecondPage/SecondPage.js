@@ -75,7 +75,7 @@ function SecondPage() {
             </div>
             <div className={`second_part ${phoneError ? 'selectError':''}`}>
               <label>ტელეფონის ნომერი</label>
-              <input type='text' placeholder='+995 598 00 07 01' className='inputs2'  value={phone} onChange={changePhone}/>
+              <input type='text' placeholder='+995598000701' className='inputs2'  value={phone} onChange={changePhone}/>
               <span className='responsive_computer'>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
               <span className='responsive_mobile'>ქართული მობ-ნომრის ფორმატი</span>
             </div>
