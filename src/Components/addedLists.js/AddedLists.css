@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    font-family: HelveticaNeue;
+    
+}
+@font-face{
+    font-family: HelveticaNeue;
+    src:url(../../fonts/HelveticaNeue.ttc)
+}
+.main_window{
+    padding-top: 40px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recordinglists_header{
+    font-family:HelveticaNeue;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 21px;
+    margin-bottom: 80px;
+}
+.recordinglists{
+    width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.member{
+    margin-bottom: 20px;
+}

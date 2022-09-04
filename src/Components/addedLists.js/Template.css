@@ -1,0 +1,11 @@
+.template{
+    width: 563px;
+    height: 205px;
+    background: #EAFAFF;
+    border: 1px solid #AED1EA;
+    border-radius: 20px;
+}
+.member_image{
+    width: 266px;
+    height: 178px;
+}
