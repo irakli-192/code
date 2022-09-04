@@ -18,13 +18,13 @@ function App() {
   
   return (
     <Fragment>
-      {/* {page===1&&<WelcomePage/>}
+      {page===1&&<WelcomePage/>}
       {page===2&&<SecondPage/>}
       <ThirdPageContext>
         {page===3&&<ThirdPage/>}
       </ThirdPageContext>
-      {page===4&&<FourthPage/>} */}
-      <AddedLists/>
+      {page===4&&<FourthPage/>}
+      {page===5&&<AddedLists/>}
       
     </Fragment>
     

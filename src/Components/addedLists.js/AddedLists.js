@@ -18,8 +18,12 @@ function AddedLists() {
             <div className='recordinglists'>
                 {templ.map(item=>{
                     return (
-                        <div className='member'>
-                             <Template image={item.laptop.image} name={item.laptop.name}/>
+                        <div className='member' key={item.laptop.id}>
+                             <Template
+                              image={item.laptop.image}
+                              member_name={item.user.name}
+                              member_surname={item.user.surname}
+                              laptop_name={item.laptop.name}/>
                         </div>
                    
                     )

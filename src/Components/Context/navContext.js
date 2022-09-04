@@ -40,7 +40,10 @@ function NavContext(props) {
         
     },[])
     
-    
+    const list=(e)=>{
+      e.preventDefault()
+      setPage(5)
+    }
   
     useEffect(()=>{
       window.localStorage.setItem('dataObj',JSON.stringify(datas))
@@ -137,7 +140,7 @@ function NavContext(props) {
       setPage(page-1)
     }
     
-    const value={position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
+    const value={list,position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
       changePosition,phoneError,emailError,selectError2,chosenTeam,chosenPosition,selectError,backFunction,goFunction,page,setPage}
   return (
     <div>

@@ -6,7 +6,11 @@ function Template(props) {
   return (
     <div className='template'>
       <img src={`https://pcfy.redberryinternship.ge/${props.image}`} className='member_image'/>
-      <h1>{props.name}</h1>
+      <div className='member_texts'>
+        <h1 className='full_name'>{props.member_name} {props.member_surname}</h1>
+        <h3 className='leptop_brand'>{props.laptop_name}</h3>
+        <span className='see_more'>მეტის ნახვა</span>
+      </div>
     </div>
   )
 }

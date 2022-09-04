@@ -1,11 +1,59 @@
+*{
+    box-sizing: border-box;
+    font-family: HelveticaNeue;
+    
+}
+@font-face{
+    font-family: HelveticaNeue;
+    src:url(../../fonts/HelveticaNeue.ttc)
+}
 .template{
     width: 563px;
     height: 205px;
     background: #EAFAFF;
     border: 1px solid #AED1EA;
     border-radius: 20px;
+    padding-top: 14px;
+    padding-left: 14px;
+    display: flex;
 }
 .member_image{
     width: 266px;
     height: 178px;
+    border-radius: 10px;
+}
+.member_texts{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.full_name{
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    color: #2E2E2E;
+    margin-bottom: 20px;
+}
+.laptop_brand{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    color: #2E2E2E;
+}
+.see_more{
+    margin-top:50px;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration-line: underline;
+    color: #4386A9;
 }
