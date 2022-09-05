@@ -17,6 +17,10 @@
     padding-left: 73px;
 
 }
+input:focus{
+    background: rgba(43, 75, 242, 0.06);
+    border: 1.8px solid #6499FF;
+}
 .image_button:hover{
     background: #317AD0;
 }
@@ -528,6 +532,24 @@ color: #000000;
     .line2{
         display: none;
     }
+    .image_button2{
+        width: 187px;
+        height: 46px;
+        border-radius: 8px;
+        font-family: HelveticaNeue;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .photo_text{    
+        font-family: HelveticaNeue;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    
     .two{
         display: inline-block;
         font-family: HelveticaNeue;
@@ -549,9 +571,9 @@ color: #000000;
         position: relative;
         
     }
-    .add_button{
+    /* .add_button{
         display: none;
-    }
+    } */
     .image_button{
         display: none;
     }

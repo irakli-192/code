@@ -9,6 +9,7 @@ let position_id=0;
 const telRegex=/\+\S*9\S*9\S*5\S*5\S*[976514]\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*/;
 const emailRegex=/^[^@]+@(redberry)\.ge$/;
 function NavContext(props) {
+  
   const{team,position}=useContext(fetchContext)
   const[name,setName]=useState('')  
   const[page,setPage]=useState(1)
@@ -30,7 +31,7 @@ function NavContext(props) {
         const formData=window.localStorage.getItem("dataObj")
         const form=JSON.parse(formData)
         if(formData!=null){
-          setName(form.name)
+          setName(form.name)    
           setLastName(form.lastName)
           setChosenTeam(form.chosenTeam)
           setPhone(form.phone)
@@ -185,7 +186,7 @@ function NavContext(props) {
     
    
     
-    const value={welcome,obj,id,finalFunction,welcome,list,position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
+    const value={setName,setLastName,setEmail,setPhone,setChosenTeam,setChosenPosition,welcome,obj,id,finalFunction,welcome,list,position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
       changePosition,phoneError,emailError,selectError2,chosenTeam,chosenPosition,selectError,backFunction,goFunction,page,setPage}
   return (
     <div>

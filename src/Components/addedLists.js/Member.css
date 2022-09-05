@@ -181,7 +181,9 @@
     color: #2E2E2E;
     margin-bottom: 20px;
 }
-
+.botom_member_right_left{
+    margin-right: 31px;
+}
 .botom_member_left_right span{
     font-family: HelveticaNeue;
     font-style: normal;
@@ -222,6 +224,7 @@
 }
 .right_parent{
     display: flex;
+    margin-top:65px;
 }
 @media(max-width:390px){
     *{
@@ -229,9 +232,16 @@
         font-family: HelveticaNeue;
         
     }
+    .botom_member_right_left{
+        margin-right: 0px;
+    }
     @font-face{
         font-family: HelveticaNeue;
         src:url(../../fonts/HelveticaNeue.ttc)
+    }
+    .right_parent{
+        margin-top:0px;
+
     }
     .backGRoup{
         display: none;

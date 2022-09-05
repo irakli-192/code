@@ -23,10 +23,10 @@ function App() {
       {page===2&&<SecondPage/>}
       <ThirdPageContext>
         {page===3&&<ThirdPage/>}
+        {page===4&&<FourthPage/>}
+        {page===5&&<AddedLists/>}
+        {page===6&&<Member/>}
       </ThirdPageContext>
-      {page===4&&<FourthPage/>}
-      {page===5&&<AddedLists/>}
-      {page===6&&<Member/>}
     </Fragment>
     
   )

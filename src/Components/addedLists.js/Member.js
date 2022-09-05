@@ -4,11 +4,35 @@ import Computer from '../../assets/Computer.png'
 import back from '../../assets/back.png'
 import './Member.css'
 import { navContext } from '../Context/navContext'
-
+import { fetchContext } from '../Context/fetchContext'
+import { thirdPageContext } from '../Context/ThirdPageContext'
+let t=''
+let posit=''
+let lap=''
 function Member(props) {
   const{obj,backFunction}=useContext(navContext)
+  const{position,team}=useContext(fetchContext)
+  const{laptop}=useContext(thirdPageContext)
+
+  {laptop.map(laptop=>{
+    if(obj.laptop.brand_id==laptop.id){
+      lap=laptop.name
+      return lap
+    }
+  })}
   console.log(obj)
-  
+  {team.map(item=>{
+    if(obj.user.team_id==item.id){
+      t=item.name
+      return t
+    }
+  })}
+  {position.map(pos=>{
+    if(obj.user.position_id==pos.id){
+      posit=pos.name
+      return posit
+    }
+  })}
  
   return (
       <div className='main_member'>
@@ -33,8 +57,8 @@ function Member(props) {
               </div>
               <div className='right2_member_section'>
                 <span>{obj.user.name} {obj.user.surname}</span>
-                <span>{obj.user.team_id}</span>
-                <span>პოზიცია:</span>
+                 <span>{t}</span>
+                 <span>{posit}</span> 
                 <span>{obj.user.email}</span>
                 <span>{obj.user.phone_number}</span>
               </div>
@@ -51,7 +75,7 @@ function Member(props) {
             </div>
             <div className='left_member_section2_right'>
               <span>{obj.laptop.name}</span>
-              <span>{obj.laptop.brand_id}</span>
+              <span>{lap}</span>
               <span>{obj.laptop.ram}</span>
               <span>{obj.laptop.hard_drive_type}</span>
             </div>

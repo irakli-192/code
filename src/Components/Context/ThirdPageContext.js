@@ -9,7 +9,7 @@ let laptop_brand_id=0
 export const thirdPageContext=createContext();
 const token='bf4d99efef9afdd9a75021b0d084da4b'
 function ThirdPageContext(props) {
-  const{page,setPage,team_id,position_id}=useContext(navContext)
+  const{page,setPage,team_id,position_id,setName,setLastName,setEmail,setPhone,setChosenTeam,setChosenPosition}=useContext(navContext)
   const[laptop,setLaptop]=useState([])
   const[CPU,setCPU]=useState([])
   const[image,setImage]=useState(null)
@@ -40,7 +40,7 @@ function ThirdPageContext(props) {
   const[urlError,setUrlError]=useState(false)
   const[laptopCon,setLaptopCon]=useState('')
 
-
+  
   const[url,setUrl]=useState(null)
   const[type,setType]=useState('')
   const[notUrl,setNotUrl]=useState(true)  
@@ -251,6 +251,26 @@ function ThirdPageContext(props) {
         const response = await axios.post('https://pcfy.redberryinternship.ge/api/laptop/create', formdata, config) 
       }
       sendData()  
+      setType('')
+      setMemory(false)
+      setMemory2(false)
+      setSelectCPU('CPU')
+      setHardDrive('')
+      setCPUInput('')
+      setStream('')
+      setLaptopName('')
+      setRam('')
+      setDate('')
+      setCost('')
+      setConditionLaptop(false)
+      setConditionLaptop2(false)
+      setSelectLaptop('ლეპტოპის ბრენდი')
+      setChosenPosition('პოზიცია')
+      setName('')
+      setLastName('')
+      setChosenTeam('თიმი')
+      setEmail('')
+      setPhone('')
     }  
   }
   const value={laptopCon,hardDrive,urlError,type,notUrl,uploadPhoto,url,memory2,Memory2,conditionLaptop2,Condition2,conditionError,costError,ramTypeError,ramError,laptop,CPU,laptopName,GoSavePage,LaptopName,selectLaptop,laptopNameError,selectLaptopError,selectCPUError,CPUInputError,streamError,
