@@ -57,3 +57,38 @@
     text-decoration-line: underline;
     color: #4386A9;
 }
+@media (max-width:390px){
+    *{
+        box-sizing: border-box;
+        font-family: HelveticaNeue;
+        
+    }
+    @font-face{
+        font-family: HelveticaNeue;
+        src:url(../../fonts/HelveticaNeue.ttc)
+    }
+    .template{
+        width:358px;
+        height:123px;
+        padding-top: 7px;
+        padding-left: 7px;
+    }  
+    .member_image{
+        width: 164px;
+        height: 109px;
+    }
+    .member_texts{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 180px;
+    }
+    .see_more{
+        margin-top: 13px;
+        
+    }
+    .full_name{
+        height: 20px;
+    }
+} 

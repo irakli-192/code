@@ -8,12 +8,14 @@
     src:url(../../fonts/HelveticaNeue.ttc)
 }
 .main_window{
-    padding-top: 40px;
+    padding-top: 68px;
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    
 }
 .recordinglists_header{
     font-family:HelveticaNeue;
@@ -31,4 +33,53 @@
 }
 .member{
     margin-bottom: 20px;
+}
+.return_button{
+    display: none;
+}
+.return_button2{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top:50px;
+    /* margin-left: 60px; */
+    padding-left: 60px;
+    cursor: pointer;
+}
+@media (max-width:390px){
+    .main_window{
+        width:390px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        
+    }
+    .return_button{
+        display: flex;
+        width: 100%;
+        padding-left: 30px;
+        position: absolute;
+        top:40px;
+    }
+    .recordinglists{
+        width: 390px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .recordinglists_header{
+        font-family: HelveticaNeue;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: #232323;
+        margin-bottom: 40px;
+        
+    }
+    .return_button2{
+        display: none;
+    }
 }

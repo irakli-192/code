@@ -10,6 +10,15 @@
 .parent{
     width: 100%;
 }
+.name:focus{
+    background: rgba(43, 75, 242, 0.06);
+    border: 1.8px solid #6499FF;
+}
+
+.inputs2:focus{
+    background: rgba(43, 75, 242, 0.06);
+    border: 1.8px solid #6499FF;
+}
 
 .main_box{
     width: 100%;
@@ -18,6 +27,12 @@
     position: absolute;
     top:0;
     z-index: 1;
+}
+.button:hover{
+    background: #317AD0;
+}
+.button:focus{
+    background: #1A5DAB;
 }
 .responsive_mobile{
     display: none;

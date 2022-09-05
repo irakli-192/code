@@ -52,6 +52,24 @@
 .computer_photo{
     display: none;
 }
+.first_button:hover{
+    background: #317AD0;
+}
+.second_button:hover{
+    background: #317AD0;
+}
+
+.first_button:focus{
+    background: #1A5DAB;
+}
+.second_button:focus{
+    background: #1A5DAB;
+}
+
+
+
+
+
 @media(max-width:390px){
     .main{
         width: 100%;

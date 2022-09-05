@@ -139,8 +139,12 @@ function NavContext(props) {
       e.preventDefault();
       setPage(page-1)
     }
+    const welcome=(e)=>{
+      e.preventDefault();
+      setPage(1)
+    }
     
-    const value={list,position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
+    const value={welcome,list,position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
       changePosition,phoneError,emailError,selectError2,chosenTeam,chosenPosition,selectError,backFunction,goFunction,page,setPage}
   return (
     <div>

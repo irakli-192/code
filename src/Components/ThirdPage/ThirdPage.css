@@ -17,6 +17,33 @@
     padding-left: 73px;
 
 }
+.image_button:hover{
+    background: #317AD0;
+}
+.image_button:focus{
+    background: #1A5DAB;
+}
+.image_button2:hover{
+    background: #317AD0;
+}
+.image_button2:focus{
+    background: #1A5DAB;
+}
+.save:hover{
+ 
+    background: #317AD0;
+}
+.save:focus{
+    background: #1A5DAB;
+    transition-duration: 0.1s;
+
+}
+.save:active::after{
+    background: #1A5DAB;
+   
+
+}
+
 .box{
     width: 1226px;
     background-color: white;
