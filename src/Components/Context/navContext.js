@@ -185,7 +185,7 @@ function NavContext(props) {
     
    
     
-    const value={obj,id,finalFunction,welcome,list,position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
+    const value={welcome,obj,id,finalFunction,welcome,list,position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
       changePosition,phoneError,emailError,selectError2,chosenTeam,chosenPosition,selectError,backFunction,goFunction,page,setPage}
   return (
     <div>

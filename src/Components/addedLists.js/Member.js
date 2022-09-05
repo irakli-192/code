@@ -1,18 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Group4 from '../../assets/Group4.png'
 import Computer from '../../assets/Computer.png'
+import back from '../../assets/back.png'
 import './Member.css'
 import { navContext } from '../Context/navContext'
 
 function Member(props) {
-  const{obj}=useContext(navContext)
+  const{obj,backFunction}=useContext(navContext)
   console.log(obj)
   
  
   return (
-    <div>
       <div className='main_member'>
-        
+        <div>
+          <img className='backGRoup' src={Group4} onClick={backFunction}/>
+          <img className='backGRoup_mobile' src={back} onClick={backFunction}/>
+        </div>
         <div className='member_laptop_parent'>
           <h1 className='member_laptop'>ლეპტოპის ინფო</h1>
         </div>
@@ -20,19 +23,21 @@ function Member(props) {
             <div className='left_member_section'>
               <img src={`https://pcfy.redberryinternship.ge${obj.laptop.image}`} className='member_back'/> 
             </div>
-            <div className='right_member_section'>
-              <span>სახელი:</span>
-              <span>თიმი:</span>
-              <span>პოზიცია:</span>
-              <span>მეილი:</span>
-              <span>ტელ.ნომერი:</span>             
-            </div>
-            <div className='right2_member_section'>
-              <span>{obj.user.name} {obj.user.surname}</span>
-              <span>{obj.user.team_id}</span>
-              <span>პოზიცია:</span>
-              <span>{obj.user.email}</span>
-              <span>{obj.user.phone_number}</span>
+            <div className='right_parent'>
+              <div className='right_member_section'>
+                <span>სახელი:</span>
+                <span>თიმი:</span>
+                <span>პოზიცია:</span>
+                <span>მეილი:</span>
+                <span>ტელ.ნომერი:</span>             
+              </div>
+              <div className='right2_member_section'>
+                <span>{obj.user.name} {obj.user.surname}</span>
+                <span>{obj.user.team_id}</span>
+                <span>პოზიცია:</span>
+                <span>{obj.user.email}</span>
+                <span>{obj.user.phone_number}</span>
+              </div>
             </div>
         </div>
         <div className='divider_line'></div>
@@ -86,7 +91,7 @@ function Member(props) {
           </div>
         </div>
       </div>
-    </div>
+    
   )
 }
 

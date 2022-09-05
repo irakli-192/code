@@ -9,7 +9,7 @@ import Member from './Member'
 function AddedLists() {
     
     const[templ,setTempl]=useState([])
-    const{finalFunction}=useContext(navContext)
+    const{finalFunction,welcome}=useContext(navContext)
     useEffect(()=>{
         fetch('https://pcfy.redberryinternship.ge/api/laptops?token=bf4d99efef9afdd9a75021b0d084da4b').then(response=>{
             return response.json()
@@ -17,16 +17,16 @@ function AddedLists() {
             return setTempl(data.data)
         })
     },[])
-   
+    
     console.log(templ)
     return (
         <div>
             <div className='main_window'>
                 <div className='return_button'>
-                    <img src={back} alt='back'/>
+                    <img src={back} alt='back' onClick={welcome}/>
                 </div>
                 <div className='return_button2'>
-                    <img src={Group4} alt='back'/>
+                    <img src={Group4} alt='back' onClick={welcome}/>
                 </div>
                 <h1 className='recordinglists_header'>ჩანაწერების სია</h1>
                 <div className='recordinglists'>
