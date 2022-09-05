@@ -84,8 +84,44 @@ function NavContext(props) {
       setChosenPosition(e.target.value)
       
     }
-   
-  
+
+    const[id,setId]=useState(null)
+    const[obj,setObj]=useState({
+      user:{
+        email:'',
+        phone_number:'',
+        name:'',
+        position_id:'',
+        surname:'',
+        team_id:''
+      },
+      laptop:{
+        brand_id:'',
+        cpu:{
+          name:'',
+          cores:'',
+          threads:''
+        },
+        hard_drive_type:'',
+        image:'',
+        name:'',
+        price:'',
+        purchase_date:'',
+        ram:'',
+        state:''
+      }
+    })
+    const finalFunction=(id,e)=>{
+      e.preventDefault()
+      setPage(6)
+      console.log(id)
+      setId(id)
+      fetch(`https://pcfy.redberryinternship.ge/api/laptop/${id}?token=bf4d99efef9afdd9a75021b0d084da4b`).then(response=>{
+        return response.json()
+      }).then(data=>{
+        return setObj(data.data)
+      })
+    }
     const goFunction=(e)=>{
       e.preventDefault();
       if(page===2){
@@ -143,8 +179,13 @@ function NavContext(props) {
       e.preventDefault();
       setPage(1)
     }
+    // const[member,setMemeber]=useState(true)
     
-    const value={welcome,list,position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
+    // const[id,setId]=useState(null)
+    
+   
+    
+    const value={obj,id,finalFunction,welcome,list,position_id,team_id,namesErrors,name,lastName,email,phone,changeLastName,changeName,lanErrors,lastNameErrors,changeEmail,changePhone,changeTeam,
       changePosition,phoneError,emailError,selectError2,chosenTeam,chosenPosition,selectError,backFunction,goFunction,page,setPage}
   return (
     <div>

@@ -8,6 +8,7 @@ import ThirdPage from './Components/ThirdPage/ThirdPage';
 import WelcomePage from './Components/WelcomePage/WelcomePage';
 import FourthPage from './Components/FourthPage.js/FourthPage';
 import AddedLists from './Components/addedLists.js/AddedLists';
+import Member from './Components/addedLists.js/Member';
 
 
 
@@ -25,7 +26,7 @@ function App() {
       </ThirdPageContext>
       {page===4&&<FourthPage/>}
       {page===5&&<AddedLists/>}
-      
+      {page===6&&<Member/>}
     </Fragment>
     
   )

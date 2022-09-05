@@ -18,14 +18,14 @@ function ThirdPageContext(props) {
     fetch('https://pcfy.redberryinternship.ge/api/brands').then(response=>{
       return response.json()
     }).then(data=>{
-      setLaptop(data.data)
+      return setLaptop(data.data)
     })
   },[])
   useEffect(()=>{
     fetch('https://pcfy.redberryinternship.ge/api/cpus').then(response=>{
       return response.json()
     }).then(data=>{
-      setCPU(data.data)
+      return setCPU(data.data)
     })
   },[])
   const[laptopNameError,setLaptopNameError]=useState(false)

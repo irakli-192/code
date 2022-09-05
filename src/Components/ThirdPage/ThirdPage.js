@@ -134,7 +134,7 @@ function ThirdPage() {
             <div className='bottom_inputs'>
               <div className='bottom_inputs_left'>
                 <label>შეძენის რიცხვი (არჩევითი)</label>
-                <input type='string' value={date} onChange={Date} className='bottom_inputs_left_date' placeholder='დდ / თთ / წწწწ'/>
+                <input type='date' value={date} onChange={Date} className='bottom_inputs_left_date' placeholder='დდ / თთ / წწწწ'/>
               </div>
               <div className={`bottom_inputs_right ${costError ? 'laptopNameError':''}`}> 
                   <label>ლეპტოპის ფასი</label>
